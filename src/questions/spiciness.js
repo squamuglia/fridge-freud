@@ -14,6 +14,14 @@ class Spiciness extends Component {
       ctrArr: [1, 2, 3, 4, 5]
     };
   }
+
+  spicyUpdate = () => {
+    if (this.state.sporty && this.state.scary) {
+      const val = this.state.sporty + this.state.scary;
+      this.props.updateSpiciness(val);
+    }
+  };
+
   handleCheck = girl => {
     if (!this.state[girl]) {
       //if girl is null
@@ -27,7 +35,7 @@ class Spiciness extends Component {
           [girl]: girlVal,
           ctrArr: newArr
         },
-        () => console.log('spiceClick', this.state.ctrArr)
+        () => this.spicyUpdate()
       );
     } else {
       //if girl has value
