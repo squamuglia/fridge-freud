@@ -17,9 +17,6 @@ class Spiciness extends Component {
   }
   handleCheck = girl => {
     if (this.state[girl]) {
-      const ctrArrMod = this.state.ctrArr;
-      ctrArrMod.unshift(this.state[girl]);
-      ctrArrMod.sort();
       this.setState(
         {
           ...this.state,
@@ -28,6 +25,9 @@ class Spiciness extends Component {
         },
         () => console.log('spiceClick', this.state)
       );
+      const ctrArrMod = this.state.ctrArr;
+      ctrArrMod.unshift(this.state[girl]);
+      ctrArrMod.sort();
     } else {
       const ctrArrMod = this.state.ctrArr;
       ctrArrMod.shift();
