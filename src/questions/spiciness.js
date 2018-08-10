@@ -11,58 +11,39 @@ class Spiciness extends Component {
       scary: null,
       ginger: null,
       sporty: null,
-      ctr: 1,
       ctrArr: [1, 2, 3, 4, 5]
     };
   }
   handleCheck = girl => {
-    if (this.state[girl]) {
+    if (!this.state[girl]) {
+      //if girl is null
+      console.log('spiceClick', this.state.ctrArr);
+      const girlVal = this.state.ctrArr[0];
+      const newArr = this.state.ctrArr;
+      newArr.shift();
       this.setState(
         {
           ...this.state,
-          ctr: ctrArrMod,
-          [girl]: null
+          [girl]: girlVal,
+          ctrArr: newArr
         },
-        () => console.log('spiceClick', this.state)
+        () => console.log('spiceClick', this.state.ctrArr)
       );
-      const ctrArrMod = this.state.ctrArr;
-      ctrArrMod.unshift(this.state[girl]);
-      ctrArrMod.sort();
     } else {
-      const ctrArrMod = this.state.ctrArr;
-      ctrArrMod.shift();
+      //if girl has value
+      let ctrArrMod = this.state.ctrArr;
+      ctrArrMod.unshift(this.state[girl]); //add girl's value back to array
+      ctrArrMod.sort(); //sort array
       this.setState(
         {
           ...this.state,
           ctrArr: ctrArrMod,
-          [girl]: this.state.ctrArr[0]
+          [girl]: null
         },
-        () => console.log('spiceClick', this.state)
+        () => console.log('spiceClick', this.state.ctrArr)
       );
     }
   };
-
-  // handleCheck = girl => {
-  //   if (this.state[girl]) {
-  //     this.setState(
-  //       {
-  //         ...this.state,
-  //         ctr: this.state[girl],
-  //         [girl]: null
-  //       },
-  //       () => console.log('spiceClick', this.state)
-  //     );
-  //   } else {
-  //     this.setState(
-  //       {
-  //         ...this.state,
-  //         ctr: this.state.ctr + 1,
-  //         [girl]: this.state.ctr
-  //       },
-  //       () => console.log('spiceClick', this.state)
-  //     );
-  //   }
-  // };
 
   render() {
     return (
@@ -81,7 +62,6 @@ class Spiciness extends Component {
                 type="checkbox"
                 name="low"
                 value="1"
-                // checked={this.props.spicine === 1}
                 onChange={() => this.handleCheck('baby')}
               />
               <label for="radio1" className="f jcc aic y x">
@@ -95,7 +75,6 @@ class Spiciness extends Component {
                 type="checkbox"
                 name="low"
                 value="2"
-                // checked={this.props.openness === 2}
                 onChange={() => this.handleCheck('ginger')}
               />
               <label for="radio2" className="f jcc aic y x">
@@ -109,7 +88,6 @@ class Spiciness extends Component {
                 type="checkbox"
                 name="low"
                 value="3"
-                // checked={this.props.openness === 3}
                 onChange={() => this.handleCheck('posh')}
               />
               <label for="radio3" className="f jcc aic y x">
@@ -123,7 +101,6 @@ class Spiciness extends Component {
                 type="checkbox"
                 name="low"
                 value="4"
-                // checked={this.props.openness === 4}
                 onChange={() => this.handleCheck('sporty')}
               />
               <label for="radio4" className="f jcc aic y x">
@@ -137,7 +114,6 @@ class Spiciness extends Component {
                 type="checkbox"
                 name="low"
                 value="5"
-                //checked={this.props.openness === 5}
                 onChange={() => this.handleCheck('scary')}
               />
               <label for="radio5" className="f jcc aic y x">
