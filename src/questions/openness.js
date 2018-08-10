@@ -7,7 +7,7 @@ const openness = props => (
     <div className="fa x m1 card">
       <div className="x">
         {props.question}
-        /10
+        /2
       </div>
       <p className="s4">How good do you feel about this?</p>
       <div className="x ac my1">

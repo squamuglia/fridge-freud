@@ -59,7 +59,7 @@ class Spiciness extends Component {
         <div className="fa x m1 card">
           <div className="x">
             {this.props.question}
-            /10
+            /2
           </div>
           <p className="s4">Rank the following</p>
           <ul className="f">

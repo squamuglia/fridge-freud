@@ -6,7 +6,7 @@ const intro = props => (
     <div className="fa x m1 card">
       <div className="x">
         {props.question}
-        /10
+        /2
       </div>
       <p className="s4">
         Fridge Freud uses advanced psychosexual analysis to recommend places to
