@@ -1,0 +1,122 @@
+@import './lib/reset.css';
+@import './lib/borders.css';
+@import './lib/display.css';
+@import './lib/positioning.css';
+@import './lib/flexbox.css';
+@import './lib/align.css';
+@import './lib/spacing.css';
+@import './lib/buttons.css';
+@import './lib/forms.css';
+@import './lib/lists.css';
+@import './lib/typography.css';
+@import './lib/z-index.css';
+
+/* Nav */
+nav {
+  text-align: center;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav > ul {
+  padding: 4px 16px;
+}
+li {
+  display: flex;
+  padding: 6px 8px;
+}
+a {
+  text-decoration: none;
+}
+
+li > a:hover { color: #888; transition: .2s; }
+
+/* Containers */
+  .gutter { max-width: 30rem; margin:0 auto; padding: 0 1rem; }
+
+/* Breakpoints */
+@media (max-width: 40em){
+  .xs-hide{ display:none !important }
+
+  .mobile-button { position: fixed;  }
+}
+
+@media (min-width: 40em) and (max-width: 52em){
+  .sm-hide{ display:none !important }
+  .mobile-button { position: fixed;  }
+}
+
+@media (min-width: 52em) and (max-width: 64em){
+  .md-hide{ display:none !important }
+}
+
+@media (min-width: 64em){
+  .lg-hide{ display:none !important }
+}
+
+/* Form */
+input:checked + label {
+  background: #bbffe0
+}
+
+.card {
+  background: #fff;
+  padding: 1em;
+  box-shadow: 0px 7px 15px -10px #aaa;
+  border: 1px solid #fafafa;
+}
+
+.radio-shadow {
+  box-shadow: 0px 2px 10px -4px #9e9ea7;
+}
+
+.q2 {
+  transform: translate(-8em, 9em) scale(0.7);
+  filter: blur(1px);
+  opacity: 0.4;
+}
+
+.q3 { 
+  transform: translate(-16em, 18em) scale(0.3);
+  filter: blur(3px);
+  opacity: 0.2;
+}
+
+/* Spice Girls */
+.spice { height: 20rem;}
+
+.posh { 
+  background:url(/q/posh.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.baby {
+  background:url(/q/baby.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.scary { 
+  background:url(/q/scary.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ginger { 
+  background:url(/q/ginger.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.sporty { 
+  background:url(/q/sporty.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
