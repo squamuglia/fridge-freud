@@ -66,82 +66,88 @@ class Spiciness extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <p className="s4">Rank the following</p>
-        <ul className="f">
-          <li className="inline-block fa ac mb1 p0 spice baby">
-            <input
-              className="none"
-              id="radio1"
-              type="checkbox"
-              name="low"
-              value="1"
-              // checked={this.props.spicine === 1}
-              onChange={() => this.handleCheck('baby')}
-            />
-            <label for="radio1" className="f jcc aic y x">
-              {this.state.baby}
-            </label>
-          </li>
-          <li className="inline-block fa ac mb1 p0 spice ginger">
-            <input
-              className="none"
-              id="radio2"
-              type="checkbox"
-              name="low"
-              value="2"
-              // checked={this.props.openness === 2}
-              onChange={() => this.handleCheck('ginger')}
-            />
-            <label for="radio2" className="f jcc aic y x">
-              {this.state.ginger}
-            </label>
-          </li>
-          <li className="inline-block fa ac mb1 p0 spice posh">
-            <input
-              className="none"
-              id="radio3"
-              type="checkbox"
-              name="low"
-              value="3"
-              // checked={this.props.openness === 3}
-              onChange={() => this.handleCheck('posh')}
-            />
-            <label for="radio3" className="f jcc aic y x">
-              {this.state.posh}
-            </label>
-          </li>
-          <li className="inline-block fa ac mb1 p0 spice sporty">
-            <input
-              className="none"
-              id="radio4"
-              type="checkbox"
-              name="low"
-              value="4"
-              // checked={this.props.openness === 4}
-              onChange={() => this.handleCheck('sporty')}
-            />
-            <label for="radio4" className="f jcc aic y x">
-              {this.state.sporty}
-            </label>
-          </li>
-          <li className="inline-block fa ac mb1 p0 spice scary">
-            <input
-              className="none"
-              id="radio5"
-              type="checkbox"
-              name="low"
-              value="5"
-              //checked={this.props.openness === 5}
-              onChange={() => this.handleCheck('scary')}
-            />
-            <label for="radio5" className="f jcc aic y x">
-              {this.state.scary}
-            </label>
-          </li>
-        </ul>
-        <PrevNext />
-      </React.Fragment>
+      <div className="gutter f fw aic jcc fill abs">
+        <div className="fa x m1 card">
+          <div className="x">
+            {this.props.question}
+            /10
+          </div>
+          <p className="s4">Rank the following</p>
+          <ul className="f">
+            <li className="inline-block fa ac mb1 p0 spice baby">
+              <input
+                className="none"
+                id="radio1"
+                type="checkbox"
+                name="low"
+                value="1"
+                // checked={this.props.spicine === 1}
+                onChange={() => this.handleCheck('baby')}
+              />
+              <label for="radio1" className="f jcc aic y x">
+                {this.state.baby}
+              </label>
+            </li>
+            <li className="inline-block fa ac mb1 p0 spice ginger">
+              <input
+                className="none"
+                id="radio2"
+                type="checkbox"
+                name="low"
+                value="2"
+                // checked={this.props.openness === 2}
+                onChange={() => this.handleCheck('ginger')}
+              />
+              <label for="radio2" className="f jcc aic y x">
+                {this.state.ginger}
+              </label>
+            </li>
+            <li className="inline-block fa ac mb1 p0 spice posh">
+              <input
+                className="none"
+                id="radio3"
+                type="checkbox"
+                name="low"
+                value="3"
+                // checked={this.props.openness === 3}
+                onChange={() => this.handleCheck('posh')}
+              />
+              <label for="radio3" className="f jcc aic y x">
+                {this.state.posh}
+              </label>
+            </li>
+            <li className="inline-block fa ac mb1 p0 spice sporty">
+              <input
+                className="none"
+                id="radio4"
+                type="checkbox"
+                name="low"
+                value="4"
+                // checked={this.props.openness === 4}
+                onChange={() => this.handleCheck('sporty')}
+              />
+              <label for="radio4" className="f jcc aic y x">
+                {this.state.sporty}
+              </label>
+            </li>
+            <li className="inline-block fa ac mb1 p0 spice scary">
+              <input
+                className="none"
+                id="radio5"
+                type="checkbox"
+                name="low"
+                value="5"
+                //checked={this.props.openness === 5}
+                onChange={() => this.handleCheck('scary')}
+              />
+              <label for="radio5" className="f jcc aic y x">
+                {this.state.scary}
+              </label>
+            </li>
+          </ul>
+          <PrevNext />
+        </div>
+      </div>
     );
   }
 }

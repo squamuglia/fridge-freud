@@ -2,17 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const intro = props => (
-  <React.Fragment>
-    <p className="s4">
-      Fridge Freud uses advanced psychosexual analysis to recommend places to
-      eat.
-    </p>
-    <p className="s4">Follow the steps to discover your innermost appetites.</p>
+  <div className="gutter f fw aic jcc fill abs">
+    <div className="fa x m1 card">
+      <div className="x">
+        {props.question}
+        /10
+      </div>
+      <p className="s4">
+        Fridge Freud uses advanced psychosexual analysis to recommend places to
+        eat.
+      </p>
+      <p className="s4">
+        Follow the steps to discover your innermost appetites.
+      </p>
 
-    <button className="flr" onClick={props.nextQuestion}>
-      Sure, I'm hungry >
-    </button>
-  </React.Fragment>
+      <button className="flr" onClick={props.nextQuestion}>
+        Sure, I'm hungry >
+      </button>
+    </div>
+  </div>
 );
 
 function msp(state) {

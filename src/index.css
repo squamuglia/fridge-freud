@@ -71,17 +71,79 @@ input:checked + label {
   box-shadow: 0px 2px 10px -4px #9e9ea7;
 }
 
+/* .q1 {
+  animation: q1 1s 1;
+}
+
 .q2 {
   transform: translate(-8em, 9em) scale(0.7);
   filter: blur(1px);
   opacity: 0.4;
+  animation: q2 1s 1;
 }
 
 .q3 { 
   transform: translate(-16em, 18em) scale(0.3);
   filter: blur(3px);
   opacity: 0.2;
+  animation: q3 1s 1;
+  transition: transform 1s;
 }
+
+@keyframes q1 {
+  from { transform: translate(8em,-9em) scale(1.4); opacity: 0; }
+  to { transform: translate(0em, 0em) scale(1) }
+}
+
+@keyframes q2 {
+  from { transform: translate(0em,0em) }
+  to { transform: translate(-8em, 9em) scale(0.7) }
+}
+
+@keyframes q3 {
+  from { transform: translate(-8em, 9em) scale(0.7); }
+  to { transform: translate(-16em, 18em) scale(0.3); opacity: 0;
+  }
+} */
+
+.q1-enter { transform: translate(8em,-9em) scale(1.4); opacity: 0; }
+.q1-enter-active { 
+  transform: translate(0em, 0em) scale(1); 
+  opacity: 1;
+  transition: transform 1s, opacity 1s; 
+}
+
+.q1-appear { transform: translate(8em,-9em) scale(1.4); opacity: 0; }
+.q1-appear-active { 
+  transform: translate(0em, 0em) scale(1); 
+  opacity: 1;
+  transition: transform 1s, opacity 1s; 
+}
+
+
+.q2-enter { transform: translate(0em,0em) scale(1) }
+.q2-enter-active { 
+  transform: translate(-8em, 9em) scale(0.7); 
+  transition: transform 1s; 
+}
+.q2-appear { transform: translate(0em,0em) scale(1) }
+.q2-appear-active { 
+  transform: translate(-8em, 9em) scale(0.7); 
+  transition: transform 1s; 
+}
+
+
+.q3-enter { transform: translate(8em, 9em) scale(0.7) }
+.q3-enter-active { 
+  transform: translate(-16em, 18em) scale(0.3); 
+  transition: transform 1s; 
+}
+.q3-appear { transform: translate(8em, 9em) scale(0.7) }
+.q3-appear-active { 
+  transform: translate(-16em, 18em) scale(0.3); 
+  transition: transform 1s; 
+}
+
 
 /* Spice Girls */
 .spice { height: 20rem;}

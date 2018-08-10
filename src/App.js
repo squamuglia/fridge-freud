@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 import Nav from './components/nav';
 import Intro from './questions/intro';
 import Openness from './questions/openness';
@@ -7,15 +8,6 @@ import { connect } from 'react-redux';
 import './index.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  // getInitialProps({ pathname, query }) {
-  //   return { custom: 'custom' };
-  // }
-
   getQuestion1 = () => {
     switch (this.props.question) {
       case 0:
@@ -68,21 +60,32 @@ class App extends Component {
     return (
       <React.Fragment>
         <Nav />
-        <div className="gutter f fw aic jcc fill abs z3">
-          <div className="fa x m1 card">
-            <div className="x">
-              {this.props.question}
-              /10
-            </div>
-            {this.getQuestion1()}
-          </div>
-        </div>
-        <div className="gutter f fw aic jcc fill abs z2 q2">
-          <div className="fa x m1 card">{this.getQuestion2()}</div>
-        </div>
-        <div className="gutter f fw aic jcc fill abs z1 q3">
-          <div className="fa x m1 card">{this.getQuestion3()}</div>
-        </div>
+        <CSSTransitionGroup
+          transitionName="q1"
+          transitionEnterTimeout={1000}
+          transitionAppear={true}
+          transitionAppearTimeout={1000}
+        >
+          {this.getQuestion1()}
+        </CSSTransitionGroup>
+
+        <CSSTransitionGroup
+          transitionName="q2"
+          transitionEnterTimeout={1000}
+          transitionAppear={true}
+          transitionAppearTimeout={1000}
+        >
+          {this.getQuestion2()}
+        </CSSTransitionGroup>
+
+        <CSSTransitionGroup
+          transitionName="q3"
+          transitionEnterTimeout={1000}
+          transitionAppear={true}
+          transitionAppearTimeout={1000}
+        >
+          {this.getQuestion3()}
+        </CSSTransitionGroup>
       </React.Fragment>
     );
   }
