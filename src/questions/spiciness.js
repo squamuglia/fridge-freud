@@ -18,7 +18,7 @@ class Spiciness extends Component {
   spicyUpdate = () => {
     if (this.state.sporty && this.state.scary) {
       const val = this.state.sporty + this.state.scary;
-      this.props.updateSpiciness(val);
+      this.props.updateTrait('spiciness', val);
     }
   };
 
@@ -145,8 +145,8 @@ function msp(state) {
 
 function mdp(dispatch) {
   return {
-    updateSpiciness: score => {
-      dispatch({ type: 'UPDATE_SPICINESS', payload: score });
+    updateTrait: (trait, score) => {
+      dispatch({ type: 'UPDATE_TRAIT', trait: trait, payload: score });
     }
   };
 }

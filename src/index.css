@@ -15,7 +15,7 @@
 nav {
   text-align: center;
 }
-ul {
+nav > ul, nav > ul > ul {
   display: flex;
   justify-content: space-between;
 }

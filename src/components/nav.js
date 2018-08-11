@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const links = [
   { href: '/login', label: 'Login' },
@@ -12,12 +13,12 @@ const Nav = () => (
   <nav>
     <ul>
       <li>
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </li>
       <ul>
         {links.map(({ key, href, label }) => (
           <li key={key}>
-            <a href={href}>{label}</a>
+            <Link to={href}>{label}</Link>
           </li>
         ))}
       </ul>

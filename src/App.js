@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Nav from './components/nav';
 import Form from './containers/Form';
+import Analysis from './containers/Analysis';
 import { connect } from 'react-redux';
 import './index.css';
 
@@ -11,15 +12,21 @@ class App extends Component {
       <Router>
         <React.Fragment>
           <Nav />
-          <Route exact path="/" component={() => <Form />} />
-          <Route exact path="/analysis" component={() => null} />
+          <Route
+            exact
+            path="/"
+            component={() =>
+              this.props.question > 2 ? <Redirect to="/analysis" /> : <Form />
+            }
+          />
+          <Route exact path="/analysis" component={() => <Analysis />} />
           <div className="fix bottom left m1">
             <a
               href="https://github.com/squamuglia"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Max
+              💔Max
             </a>
           </div>
         </React.Fragment>

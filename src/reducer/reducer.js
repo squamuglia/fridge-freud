@@ -6,7 +6,14 @@ const defaultState = {
   username: null,
   question: 0,
   openness: 1,
-  spiciness: 1
+  spiciness: 1,
+  fanciness: 1,
+  quietness: 1,
+  basicness: 1,
+  sexiness: 1,
+  masculinity: 1,
+  femininity: 1,
+  neuroticism: 1
 };
 
 // REDUCERS
@@ -36,10 +43,10 @@ export default function reducer(state = defaultState, action) {
         openness: action.payload
       };
 
-    case 'UPDATE_SPICINESS':
+    case 'UPDATE_TRAIT':
       return {
         ...state,
-        spiciness: action.payload
+        [action.trait]: action.payload
       };
 
     default:
