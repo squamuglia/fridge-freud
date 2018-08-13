@@ -6,7 +6,6 @@ const Sidebar = props => (
     <li>open: {props.openness}</li>
     <li>spicy: {props.spiciness}</li>
     <li>fancy: {props.fanciness}</li>
-    <li>open: {props.openness}</li>
     <li>white: {props.whiteness}</li>
     <li>basic: {props.basicness}</li>
     <li>sexy: {props.sexiness}</li>
@@ -22,8 +21,6 @@ function msp(state) {
     openness: state.openness,
     spiciness: state.spiciness,
     fanciness: state.fanciness,
-    openness: state.openness,
-    spiciness: state.spiciness,
     quietness: state.quietness,
     whiteness: state.whiteness,
     basicness: state.basicness,

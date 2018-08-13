@@ -26,7 +26,10 @@ class App extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              💔Max
+              <span role="img" aria-label="broken heart">
+                💔
+              </span>
+              Max
             </a>
           </div>
         </React.Fragment>

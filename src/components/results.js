@@ -8,14 +8,20 @@ class Results extends Component {
 
   componentDidMount() {
     fetch(
-      'https://api.yelp.com/v3/businesses/search?term=restaurants&location=manhattan&categories=ramen,jewish&limit=20',
+      'https://api.yelp.com/v3/businesses/search?term=restaurants&location=brooklyn&categories=mexican',
       {
+        crossDomain: true,
+        method: 'GET',
         headers: {
-          Authorization: 'Bearer ' // add api code
+          Authorization: 'Bearer '
         }
       }
-    );
+    )
+      .then(response => response.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
   }
+
   render() {
     return <div className="fa">hii</div>;
   }
