@@ -5,7 +5,6 @@ import Spiciness from '../questions/spiciness';
 import Quietness from '../questions/quietness';
 import Location from '../questions/location';
 import { connect } from 'react-redux';
-import { CSSTransition } from 'react-transition-group';
 
 class Form extends Component {
   getQuestion1 = () => {
@@ -71,11 +70,9 @@ class Form extends Component {
   render() {
     return (
       <React.Fragment>
-        <CSSTransition classNames="q1" in={true} timeout={300}>
-          <div className="gutter f fw aic jcc fill abs z3">
-            <div className="fa x m1 card">{this.getQuestion1()}</div>
-          </div>
-        </CSSTransition>
+        <div className="gutter f fw aic jcc fill abs z3 q1">
+          <div className="fa x m1 card">{this.getQuestion1()}</div>
+        </div>
         <div className="gutter f fw aic jcc fill abs z2 q2">
           <div className="fa x m1 card">{this.getQuestion2()}</div>
         </div>
