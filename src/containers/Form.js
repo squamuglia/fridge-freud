@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Intro from '../questions/intro';
 import Openness from '../questions/openness';
 import Spiciness from '../questions/spiciness';
+import Quietness from '../questions/quietness';
 import { connect } from 'react-redux';
+import { CSSTransition } from 'react-transition-group';
 
 class Form extends Component {
   getQuestion1 = () => {
@@ -15,6 +17,9 @@ class Form extends Component {
 
       case 2:
         return <Spiciness />;
+
+      case 3:
+        return <Quietness />;
 
       default:
         return <Intro />;
@@ -32,6 +37,9 @@ class Form extends Component {
       case 3:
         return <Spiciness />;
 
+      case 4:
+        return <Quietness />;
+
       default:
         return <div />;
     }
@@ -48,6 +56,9 @@ class Form extends Component {
       case 4:
         return <Spiciness />;
 
+      case 5:
+        return <Quietness />;
+
       default:
         return <div />;
     }
@@ -56,9 +67,11 @@ class Form extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="gutter f fw aic jcc fill abs z3">
-          <div className="fa x m1 card">{this.getQuestion1()}</div>
-        </div>
+        <CSSTransition classNames="q1" in={true} timeout={300}>
+          <div className="gutter f fw aic jcc fill abs z3">
+            <div className="fa x m1 card">{this.getQuestion1()}</div>
+          </div>
+        </CSSTransition>
         <div className="gutter f fw aic jcc fill abs z2 q2">
           <div className="fa x m1 card">{this.getQuestion2()}</div>
         </div>

@@ -5,10 +5,7 @@ import { connect } from 'react-redux';
 const openness = props => (
   <div className="gutter f fw aic jcc fill abs">
     <div className="fa x m1 card">
-      <div className="x">
-        {props.question}
-        /2
-      </div>
+      <div className="x">{props.question}</div>
       <p className="s4">How good do you feel about this?</p>
       <div className="x ac my1">
         <img src="/q/foot.jpg" alt="foot" />

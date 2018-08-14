@@ -6,7 +6,7 @@ class Analysis extends Component {
   state = {};
   render() {
     return (
-      <div className="gutter f fw">
+      <div className="wide-gutter f">
         <Sidebar />
         <Results />
       </div>

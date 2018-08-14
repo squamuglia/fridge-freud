@@ -4,6 +4,7 @@ const defaultState = {
   token: null,
   logged_in: false,
   username: null,
+  location: 11216,
   question: 0,
   openness: 1,
   spiciness: 1,

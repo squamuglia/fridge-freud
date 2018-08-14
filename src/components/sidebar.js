@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Sidebar = props => (
-  <div className="fa">
+  <div className="fa mw-25">
     <li>open: {props.openness}</li>
     <li>spicy: {props.spiciness}</li>
     <li>fancy: {props.fanciness}</li>

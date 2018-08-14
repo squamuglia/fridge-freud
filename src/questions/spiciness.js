@@ -57,10 +57,7 @@ class Spiciness extends Component {
     return (
       <div className="gutter f fw aic jcc fill abs">
         <div className="fa x m1 card">
-          <div className="x">
-            {this.props.question}
-            /2
-          </div>
+          <div className="x">{this.props.question}</div>
           <p className="s4">Rank the following</p>
           <ul className="f">
             <li className="inline-block fa ac mb1 p0 spice baby">

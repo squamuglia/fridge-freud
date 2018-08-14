@@ -32,8 +32,31 @@ a {
 
 li > a:hover { color: #888; transition: .2s; }
 
+/*Colors*/
+.bg-light { background:#eaeef1;
+}
+
 /* Containers */
   .gutter { max-width: 30rem; margin:0 auto; padding: 0 1rem; }
+
+  .wide-gutter { max-width: 60rem; margin:0 auto; padding: 0 1rem; }
+
+  .mw-25 { min-width: 25%; }
+  .mw-75 { min-width: 75%; }
+
+  .h-25 { height: 30rem }
+
+  .w-33 { width: 30%; margin-right: 1%; }
+
+  .red-sq { background: #e81a1a; width: 50px; height: 50px; }
+
+  .__res-img { 
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
 /* Breakpoints */
 @media (max-width: 40em){
@@ -88,35 +111,19 @@ input:checked + label {
   opacity: 0.2;
   z-index:1;
 }
-/*
-@keyframes q1 {
-  from { transform: translate(8em,-9em) scale(1.4); opacity: 0; }
-  to { transform: translate(0em, 0em) scale(1) }
-}
-
-@keyframes q2 {
-  from { transform: translate(0em,0em) }
-  to { transform: translate(-8em, 9em) scale(0.7) }
-}
-
-@keyframes q3 {
-  from { transform: translate(-8em, 9em) scale(0.7); }
-  to { transform: translate(-16em, 18em) scale(0.3); opacity: 0;
-  }
-} */
 
 .q1-enter { transform: translate(8em,-9em) scale(1.4); opacity: 0; }
 .q1-enter-active { 
   transform: translate(0em, 0em) scale(1); 
   opacity: 1;
-  transition: transform 1s, opacity 1s; 
+  transition: all 300ms, opacity 1s; 
 }
 
 .q1-appear { transform: translate(8em,-9em) scale(1.4); opacity: 0; }
 .q1-appear-active { 
   transform: translate(0em, 0em) scale(1); 
   opacity: 1;
-  transition: transform 1s, opacity 1s; 
+  transition: all 300ms, opacity 1s; 
 }
 
 

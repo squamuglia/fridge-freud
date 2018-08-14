@@ -1,30 +1,82 @@
 import React, { Component } from 'react';
+import Restaurant from './restaurant';
+import { connect } from 'react-redux';
 
 class Results extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      restaurants: [{ image_url: '#', name: 'loading' }],
+      currentRestaurants: [],
+      index: 3
+    };
   }
+
+  addRestaurants = restaurants => {
+    this.setState(
+      {
+        restaurants: restaurants.businesses,
+        currentRestaurants: restaurants.businesses.slice(0, 3)
+      },
+      () => console.log(this.state)
+    );
+  };
 
   componentDidMount() {
-    fetch(
-      'https://api.yelp.com/v3/businesses/search?term=restaurants&location=brooklyn&categories=mexican',
-      {
-        crossDomain: true,
-        method: 'GET',
-        headers: {
-          Authorization: 'Bearer '
-        }
+    fetch('http://localhost:3000/api/v1/restaurants/filter', {
+      method: 'POST',
+      body: JSON.stringify({
+        location: this.props.location,
+        categories: 'spanish'
+      }),
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
       }
-    )
+    })
       .then(response => response.json())
-      .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response));
+      .catch(error => console.error(`Fetch Error =\n`, error))
+      .then(r => this.addRestaurants(r));
   }
 
+  nextThree = () => {
+    const nextThree = this.state.restaurants.slice(
+      this.state.index,
+      this.state.index + 3
+    );
+    this.setState({
+      ...this.state,
+      currentRestaurants: nextThree,
+      index: this.state.index + 3
+    });
+  };
+
   render() {
-    return <div className="fa">hii</div>;
+    return (
+      <div className="fa f fw mw-75">
+        <h4>
+          Behold, your darkest desires <span className="small">(probably)</span>
+          :
+        </h4>
+        {this.state.currentRestaurants.map(r => (
+          <Restaurant
+            name={r.name}
+            img={r.image_url}
+            url={r.url}
+            phone={r.display_phone}
+            call={r.phone}
+            rating={r.rating}
+          />
+        ))}
+        <button onClick={this.nextThree}>Three More!</button>
+      </div>
+    );
   }
 }
 
-export default Results;
+function msp(state) {
+  return {
+    location: state.location
+  };
+}
+
+export default connect(msp)(Results);
