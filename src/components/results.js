@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Restaurant from './restaurant';
 import { connect } from 'react-redux';
+import { getCategories } from '../algo';
 
 class Results extends Component {
   constructor(props) {
@@ -23,11 +24,12 @@ class Results extends Component {
   };
 
   componentDidMount() {
+    console.log('getPersonality', getCategories(this.props));
     fetch('http://localhost:3000/api/v1/restaurants/filter', {
       method: 'POST',
       body: JSON.stringify({
         location: this.props.location,
-        categories: 'spanish'
+        categories: getCategories(this.props)
       }),
       headers: {
         'Content-Type': 'application/json; charset=utf-8'

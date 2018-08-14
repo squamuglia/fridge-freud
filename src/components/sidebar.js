@@ -1,17 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getPersonality, getPhotos } from '../algo';
 
 const Sidebar = props => (
-  <div className="fa mw-25">
-    <li>open: {props.openness}</li>
-    <li>spicy: {props.spiciness}</li>
-    <li>fancy: {props.fanciness}</li>
-    <li>white: {props.whiteness}</li>
-    <li>basic: {props.basicness}</li>
-    <li>sexy: {props.sexiness}</li>
-    <li>masculine: {props.masculinity}</li>
-    <li>feminine: {props.femininity}</li>
-    <li>neurotic: {props.seuroticism}</li>
+  <div className="fa mw-25 my1">
+    <p className="small">You are a:</p>
+    <h4>{getPersonality(props)}</h4>
+    <div
+      className="red-sq"
+      style={{
+        background: 'url(' + getPhotos(props) + ')',
+        backgroundSize: 'cover'
+      }}
+    />
+    <ul>
+      <li>openness: {props.openness}</li>
+      <li>conscientiousness: {props.conscientiousness}</li>
+      <li>extraversion: {props.extraversion}</li>
+      <li>agreeableness: {props.agreeableness}</li>
+      <li>neurotic: {props.neuroticism}</li>
+      <li>spiciness: {props.spiciness}</li>
+    </ul>
   </div>
 );
 
@@ -20,13 +29,9 @@ function msp(state) {
     username: state.username,
     openness: state.openness,
     spiciness: state.spiciness,
-    fanciness: state.fanciness,
-    quietness: state.quietness,
-    whiteness: state.whiteness,
-    basicness: state.basicness,
-    sexiness: state.sexiness,
-    masculinity: state.masculinity,
-    femininity: state.femininity,
+    conscientiousness: state.conscientiousness,
+    extraversion: state.extraversion,
+    agreeableness: state.agreeableness,
     neuroticism: state.neuroticism
   };
 }

@@ -4,17 +4,15 @@ const defaultState = {
   token: null,
   logged_in: false,
   username: null,
+  personality: 1,
   location: 11216,
   question: 0,
-  openness: 1,
-  spiciness: 1,
-  fanciness: 1,
-  quietness: 1,
-  basicness: 1,
-  sexiness: 1,
-  masculinity: 1,
-  femininity: 1,
-  neuroticism: 1
+  openness: 0,
+  conscientiousness: 0,
+  extraversion: 0,
+  agreeableness: 0,
+  neuroticism: 0,
+  spiciness: 1
 };
 
 // REDUCERS
