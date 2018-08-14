@@ -39,7 +39,13 @@ li > a:hover { color: #888; transition: .2s; }
 /* Containers */
   .gutter { max-width: 30rem; margin:0 auto; padding: 0 1rem; }
 
-  .wide-gutter { max-width: 60rem; margin:0 auto; padding: 0 1rem; }
+  .wide-gutter { 
+    max-width: 60rem;
+    margin-right: auto; 
+    margin-left: auto; 
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+  }
 
   .mw-25 { min-width: 25%; }
   .mw-75 { min-width: 75%; }
@@ -59,7 +65,7 @@ li > a:hover { color: #888; transition: .2s; }
   }
 
 /* Breakpoints */
-@media (max-width: 40em){
+@media (max-width: 20em){
   .xs-hide{ display:none !important }
 
   .mobile-button { position: fixed;  }

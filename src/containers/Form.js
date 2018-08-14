@@ -3,6 +3,7 @@ import Intro from '../questions/intro';
 import Openness from '../questions/openness';
 import Spiciness from '../questions/spiciness';
 import Quietness from '../questions/quietness';
+import Location from '../questions/location';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 
@@ -21,8 +22,11 @@ class Form extends Component {
       case 3:
         return <Quietness />;
 
+      case 4:
+        return <Location />;
+
       default:
-        return <Intro />;
+        return <div />;
     }
   };
 

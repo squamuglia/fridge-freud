@@ -14,12 +14,12 @@ const Sidebar = props => (
       }}
     />
     <ul>
-      <li>openness: {props.openness}</li>
-      <li>conscientiousness: {props.conscientiousness}</li>
-      <li>extraversion: {props.extraversion}</li>
-      <li>agreeableness: {props.agreeableness}</li>
-      <li>neurotic: {props.neuroticism}</li>
-      <li>spiciness: {props.spiciness}</li>
+      <li>Openness: {props.openness}</li>
+      <li>Conscientiousness: {props.conscientiousness}</li>
+      <li>Extraversion: {props.extraversion}</li>
+      <li>Agreeableness: {props.agreeableness}</li>
+      <li>Neuroticism: {props.neuroticism}</li>
+      <li>Spiciness: {props.spiciness}</li>
     </ul>
   </div>
 );

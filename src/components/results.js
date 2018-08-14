@@ -7,20 +7,31 @@ class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: [{ image_url: '#', name: 'loading' }],
-      currentRestaurants: [],
-      index: 3
+      restaurants: [
+        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
+        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
+        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 }
+      ],
+      currentRestaurants: [
+        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
+        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
+        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 }
+      ],
+      index: 0
     };
   }
 
   addRestaurants = restaurants => {
-    this.setState(
-      {
-        restaurants: restaurants.businesses,
-        currentRestaurants: restaurants.businesses.slice(0, 3)
-      },
-      () => console.log(this.state)
-    );
+    console.log('add restaurants', restaurants);
+    if (restaurants.businesses.length) {
+      this.setState(
+        {
+          restaurants: restaurants.businesses,
+          currentRestaurants: restaurants.businesses.slice(0, 3)
+        },
+        () => console.log(this.state)
+      );
+    }
   };
 
   componentDidMount() {
@@ -43,7 +54,7 @@ class Results extends Component {
   nextThree = () => {
     const nextThree = this.state.restaurants.slice(
       this.state.index,
-      this.state.index + 3
+      this.state.index + 2
     );
     this.setState({
       ...this.state,

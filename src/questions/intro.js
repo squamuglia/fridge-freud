@@ -4,10 +4,7 @@ import { connect } from 'react-redux';
 const intro = props => (
   <div className="gutter f fw aic jcc fill abs">
     <div className="fa x m1 card">
-      <div className="x">
-        {props.question}
-        /2
-      </div>
+      <div className="x">{props.question}</div>
       <p className="s4">
         Fridge Freud uses advanced psychosexual analysis to recommend places to
         eat.

@@ -5,7 +5,7 @@ const defaultState = {
   logged_in: false,
   username: null,
   personality: 1,
-  location: 11216,
+  location: 12345,
   question: 0,
   openness: 0,
   conscientiousness: 0,
