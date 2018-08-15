@@ -4,6 +4,7 @@ import Nav from './components/nav';
 import Form from './containers/Form';
 import Analysis from './containers/Analysis';
 import { connect } from 'react-redux';
+import { hot } from 'react-hot-loader';
 import './index.css';
 
 class App extends Component {
@@ -60,7 +61,9 @@ function mdp(dispatch) {
   };
 }
 
-export default connect(
-  msp,
-  mdp
-)(App);
+export default hot(module)(
+  connect(
+    msp,
+    mdp
+  )(App)
+);

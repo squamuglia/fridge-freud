@@ -55,7 +55,7 @@ class Quietness extends Component {
       <div className="gutter f fw aic jcc fill abs">
         <div className="fa x m1 card">
           <div className="x">{this.props.question}</div>
-          <p className="s4">Please send him home</p>
+          <p className="s4">Please send him home.</p>
           <div className="x h-25 bg-light mb1">
             <div
               className="red-sq rel"
@@ -65,6 +65,7 @@ class Quietness extends Component {
               onDrag={this.mouseMove}
             />
           </div>
+          <p>hiiii</p>
           <PrevNext />
         </div>
       </div>
