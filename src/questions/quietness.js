@@ -65,7 +65,6 @@ class Quietness extends Component {
               onDrag={this.mouseMove}
             />
           </div>
-          <p>hiiii</p>
           <PrevNext />
         </div>
       </div>
