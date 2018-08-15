@@ -14,34 +14,25 @@ class Quietness extends Component {
   }
 
   handleDrag = (e, ui) => {
-    console.log('ui', ui);
-    console.log('id', parseInt(ui.node.id, 10));
+    console.log('state', this.state);
     const id = parseInt(ui.node.id, 10);
     const newSelected = [...this.state.selected];
 
     if (ui.y > 90 && !newSelected.includes(id)) {
       newSelected.push(id);
-      console.log('inside if', newSelected);
-      this.setState(
-        {
-          ...this.state,
-          selected: [...newSelected],
-          cnt: this.state.cnt + 1
-        },
-        () => console.log('state', this.state)
-      );
+      this.setState({
+        ...this.state,
+        selected: [...newSelected],
+        cnt: this.state.cnt + 1
+      });
     } else if (ui.y < 90 && newSelected.includes(id)) {
       let index = newSelected.indexOf(id);
-      newSelected.slice(index, index + 1);
-      console.log('inside else', newSelected);
-      this.setState(
-        {
-          ...this.state,
-          selected: [...newSelected],
-          cnt: this.state.cnt - 1
-        },
-        () => console.log('state', this.state)
-      );
+      newSelected.splice(index, 1);
+      this.setState({
+        ...this.state,
+        selected: [...newSelected],
+        cnt: this.state.cnt - 1
+      });
     }
   };
 
