@@ -50,11 +50,13 @@ li > a:hover { color: #888; transition: .2s; }
   .mw-25 { min-width: 25%; }
   .mw-75 { min-width: 75%; }
 
-  .h-25 { height: 30rem }
+  .h-25 { height: 20rem }
 
   .w-33 { width: 30%; margin-right: 1%; }
 
   .red-sq { background: #e81a1a; width: 50px; height: 50px; }
+
+  .sq { width: 50px; height: 50px; }
 
   .__res-img { 
     height: 200px;
@@ -170,6 +172,20 @@ input:checked + label {
 
 .sporty { 
   background:url(/q/sporty.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.taurus {
+  background:url(/taurus.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.wheel {
+  background:url(/wheel.png); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
