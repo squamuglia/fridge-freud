@@ -25,14 +25,13 @@ class Analysis extends Component {
       case 1: {
         return (
           <React.Fragment>
+            <div className="wide-gutter f">
+              <Results />
+            </div>
             <div className="my2 x wide-gutter ar">
               <button onClick={this.props.updateTrait('question', 0)}>
                 I want a redo!
               </button>
-            </div>
-
-            <div className="wide-gutter f">
-              <Results />
             </div>
           </React.Fragment>
         );

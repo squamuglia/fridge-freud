@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Restaurant = props => (
-  <div className="fa w-33 bg-light mb1">
+  <div className="gutter card bg-light mb1">
     <div
       className="__res-img"
       style={{ backgroundImage: 'url(' + props.img + ')' }}

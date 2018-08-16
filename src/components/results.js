@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Restaurant from './restaurant';
 import { connect } from 'react-redux';
+import Draggable from 'react-draggable';
 import { getCategories } from '../algo';
 
 class Results extends Component {
@@ -8,11 +9,6 @@ class Results extends Component {
     super(props);
     this.state = {
       restaurants: [
-        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
-        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
-        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 }
-      ],
-      currentRestaurants: [
         { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
         { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
         { image_url: '/chef.jpg', name: 'Loading...', rating: 0 }
@@ -26,8 +22,7 @@ class Results extends Component {
     if (restaurants.businesses.length) {
       this.setState(
         {
-          restaurants: restaurants.businesses,
-          currentRestaurants: restaurants.businesses.slice(0, 3)
+          restaurants: restaurants.businesses
         },
         () => console.log(this.state)
       );
@@ -66,21 +61,20 @@ class Results extends Component {
   render() {
     return (
       <div className="fa f fw mw-75">
-        <h4>
+        <p>
           Behold, your darkest desires <span className="small">(probably)</span>
           :
-        </h4>
-        {this.state.currentRestaurants.map(r => (
+        </p>
+        <Draggable>
           <Restaurant
-            name={r.name}
-            img={r.image_url}
-            url={r.url}
-            phone={r.display_phone}
-            call={r.phone}
-            rating={r.rating}
+            name={this.state.restaurants[0].name}
+            img={this.state.restaurants[0].image_url}
+            url={this.state.restaurants[0].url}
+            phone={this.state.restaurants[0].display_phone}
+            call={this.state.restaurants[0].phone}
+            rating={this.state.restaurants[0].rating}
           />
-        ))}
-        <button onClick={this.nextThree}>Three More!</button>
+        </Draggable>
       </div>
     );
   }
