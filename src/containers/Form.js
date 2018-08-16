@@ -3,6 +3,8 @@ import Intro from '../questions/intro';
 import Openness from '../questions/openness';
 import Spiciness from '../questions/spiciness';
 import Pimp from '../questions/pimp';
+import R1 from '../questions/r1';
+import R2 from '../questions/r2';
 import Location from '../questions/location';
 import { connect } from 'react-redux';
 
@@ -22,6 +24,12 @@ class Form extends Component {
         return <Pimp />;
 
       case 4:
+        return <R1 />;
+
+      case 5:
+        return <R2 />;
+
+      case 6:
         return <Location />;
 
       default:
@@ -43,6 +51,12 @@ class Form extends Component {
       case 4:
         return <Pimp />;
 
+      case 5:
+        return <R1 />;
+
+      case 6:
+        return <R2 />;
+
       default:
         return <div />;
     }
@@ -61,6 +75,12 @@ class Form extends Component {
 
       case 5:
         return <Pimp />;
+
+      case 6:
+        return <R1 />;
+
+      case 7:
+        return <R2 />;
 
       default:
         return <div />;

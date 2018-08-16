@@ -33,38 +33,37 @@ a {
 li > a:hover { color: #888; transition: .2s; }
 
 /*Colors*/
-.bg-light { background:#eaeef1;
-}
+.bg-light { background:#eaeef1 }
 
 /* Containers */
-  .gutter { max-width: 30rem; margin:0 auto; padding: 0 1rem; }
+.gutter { max-width: 30rem; margin:0 auto; padding: 0 1rem; }
 
-  .wide-gutter { 
-    max-width: 60rem;
-    margin-right: auto; 
-    margin-left: auto; 
-    padding-left: 1rem; 
-    padding-right: 1rem; 
-  }
+.wide-gutter { 
+  max-width: 60rem;
+  margin-right: auto; 
+  margin-left: auto; 
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+}
 
-  .mw-25 { min-width: 25%; }
-  .mw-75 { min-width: 75%; }
+.mw-25 { min-width: 25%; }
+.mw-75 { min-width: 75%; }
 
-  .h-25 { height: 20rem }
+.h-25 { height: 20rem }
 
-  .w-33 { width: 30%; margin-right: 1%; }
+.w-33 { width: 30%; margin-right: 1%; }
 
-  .red-sq { background: #e81a1a; width: 50px; height: 50px; }
+.red-sq { background: #e81a1a; width: 50px; height: 50px; }
 
-  .sq { width: 50px; height: 50px; }
+.sq { width: 50px; height: 50px; }
 
-  .__res-img { 
-    height: 200px;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+.__res-img { 
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 /* Breakpoints */
 @media (max-width: 20em){
@@ -102,6 +101,7 @@ input:checked + label {
   box-shadow: 0px 2px 10px -4px #9e9ea7;
 }
 
+/* Animation */
 .q1 {
   z-index:3;
   animation: q1 300ms ease-in;
@@ -179,57 +179,80 @@ input:checked + label {
 
 /* Pimp */
 .taurus {
-  background:url(/taurus.jpg); 
+  background:url(/p/taurus.jpg); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
 
 .bronco {
-  background:url(/bronco.jpg); 
+  background:url(/p/bronco.jpg); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
 
 .aston {
-  background:url(/aston.jpg); 
+  background:url(/p/aston.jpg); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
 
 .wheel {
-  background:url(/wheel.png); 
+  background:url(/p/wheel.png); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
 
 .sixty-nine {
-  background:url(/69.png); 
+  background:url(/p/69.png); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
 
 .skate-wheel {
-  background:url(/skate-wheel.png); 
+  background:url(/p/skate-wheel.png); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
 
 .antenna {
-  background:url(/antenna.png); 
+  background:url(/p/antenna.png); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
 
 .nuts {
-  background:url(/nuts.png); 
+  background:url(/p/nuts.png); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
 }
+
+/* Rorschach */
+.r1 {
+  background:url(/r/r1.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.r2 {
+  background:url(/r/r2.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.r3 {
+  background:url(/r/r3.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+

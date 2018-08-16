@@ -17,7 +17,7 @@ class App extends Component {
             exact
             path="/"
             component={() =>
-              this.props.question > 4 ? <Redirect to="/analysis" /> : <Form />
+              this.props.question > 6 ? <Redirect to="/analysis" /> : <Form />
             }
           />
           <Route exact path="/analysis" component={() => <Analysis />} />
