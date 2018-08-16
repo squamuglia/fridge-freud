@@ -177,6 +177,7 @@ input:checked + label {
   background-position: center; 
 }
 
+/* Pimp */
 .taurus {
   background:url(/taurus.jpg); 
   background-size: contain; 
@@ -184,8 +185,50 @@ input:checked + label {
   background-position: center; 
 }
 
+.bronco {
+  background:url(/bronco.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.aston {
+  background:url(/aston.jpg); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
 .wheel {
   background:url(/wheel.png); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.sixty-nine {
+  background:url(/69.png); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.skate-wheel {
+  background:url(/skate-wheel.png); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.antenna {
+  background:url(/antenna.png); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
+.nuts {
+  background:url(/nuts.png); 
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 

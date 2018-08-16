@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Intro from '../questions/intro';
 import Openness from '../questions/openness';
 import Spiciness from '../questions/spiciness';
-import Quietness from '../questions/quietness';
+import Pimp from '../questions/pimp';
 import Location from '../questions/location';
 import { connect } from 'react-redux';
 
@@ -19,7 +19,7 @@ class Form extends Component {
         return <Spiciness />;
 
       case 3:
-        return <Quietness />;
+        return <Pimp />;
 
       case 4:
         return <Location />;
@@ -41,7 +41,7 @@ class Form extends Component {
         return <Spiciness />;
 
       case 4:
-        return <Quietness />;
+        return <Pimp />;
 
       default:
         return <div />;
@@ -60,7 +60,7 @@ class Form extends Component {
         return <Spiciness />;
 
       case 5:
-        return <Quietness />;
+        return <Pimp />;
 
       default:
         return <div />;
