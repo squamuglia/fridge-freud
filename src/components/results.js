@@ -19,7 +19,7 @@ class Results extends Component {
 
   addRestaurants = restaurants => {
     console.log('add restaurants', restaurants);
-    if (restaurants.businesses.length) {
+    if (restaurants && restaurants.businesses.length) {
       this.setState(
         {
           restaurants: restaurants.businesses
