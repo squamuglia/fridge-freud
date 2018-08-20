@@ -1,5 +1,6 @@
 const defaultState = {
-  url: 'http://localhost:3000',
+  // url: 'http://localhost:3000',
+  url: 'https://food-freud.herokuapp.com/',
   user_id: null,
   token: null,
   logged_in: false,

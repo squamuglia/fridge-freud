@@ -31,7 +31,7 @@ class Results extends Component {
 
   componentDidMount() {
     console.log('getPersonality', getCategories(this.props));
-    fetch('http://localhost:3000/api/v1/restaurants/filter', {
+    fetch(this.props.url + '/api/v1/restaurants/filter', {
       method: 'POST',
       body: JSON.stringify({
         location: this.props.location,
@@ -65,15 +65,17 @@ class Results extends Component {
           Behold, your darkest desires <span className="small">(probably)</span>
           :
         </p>
-        <Draggable>
-          <Restaurant
-            name={this.state.restaurants[0].name}
-            img={this.state.restaurants[0].image_url}
-            url={this.state.restaurants[0].url}
-            phone={this.state.restaurants[0].display_phone}
-            call={this.state.restaurants[0].phone}
-            rating={this.state.restaurants[0].rating}
-          />
+        <Draggable axis="x">
+          <span>
+            <Restaurant
+              name={this.state.restaurants[0].name}
+              img={this.state.restaurants[0].image_url}
+              url={this.state.restaurants[0].url}
+              phone={this.state.restaurants[0].display_phone}
+              call={this.state.restaurants[0].phone}
+              rating={this.state.restaurants[0].rating}
+            />
+          </span>
         </Draggable>
       </div>
     );
@@ -82,7 +84,8 @@ class Results extends Component {
 
 function msp(state) {
   return {
-    location: state.location
+    location: state.location,
+    url: state.url
   };
 }
 
