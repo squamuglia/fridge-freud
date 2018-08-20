@@ -13,3 +13,7 @@ select,
 textarea {
   touch-action: manipulation;
 }
+
+body {
+  overflow-x: hidden;
+}

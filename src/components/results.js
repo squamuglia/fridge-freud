@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 import Restaurant from './restaurant';
 import { connect } from 'react-redux';
-import Draggable from 'react-draggable';
-import { getCategories } from '../algo';
+import { getPersonality } from '../algo';
+import Flickity from 'react-flickity-component';
 
 class Results extends Component {
   constructor(props) {
     super(props);
     this.state = {
       restaurants: [
-        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
-        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 },
-        { image_url: '/chef.jpg', name: 'Loading...', rating: 0 }
+        {
+          image_url: '/chef.jpg',
+          name: 'Loading...',
+          categories: [{ title: ' ' }],
+          rating: 0
+        },
+        {
+          image_url: '/chef.jpg',
+          name: 'Loading...',
+          categories: [{ title: ' ' }],
+          rating: 0
+        },
+        {
+          image_url: '/chef.jpg',
+          name: 'Loading...',
+          categories: [{ title: ' ' }],
+          rating: 0
+        }
       ],
       index: 0
     };
@@ -26,16 +41,18 @@ class Results extends Component {
         },
         () => console.log(this.state)
       );
+      this.props.addRests(restaurants.businesses);
     }
   };
 
   componentDidMount() {
-    console.log('getPersonality', getCategories(this.props));
+    const categories = getPersonality(this.props).params;
+    console.log('getPersonality params', categories);
     fetch(this.props.url + '/api/v1/restaurants/filter', {
       method: 'POST',
       body: JSON.stringify({
         location: this.props.location,
-        categories: getCategories(this.props)
+        categories: categories
       }),
       headers: {
         'Content-Type': 'application/json; charset=utf-8'
@@ -58,6 +75,12 @@ class Results extends Component {
     });
   };
 
+  displayRestaurants = () => {
+    return this.state.restaurants.map(restaurant => {
+      return <Restaurant fav={false} restaurant={restaurant} />;
+    });
+  };
+
   render() {
     return (
       <div className="fa f fw mw-75">
@@ -65,18 +88,14 @@ class Results extends Component {
           Behold, your darkest desires <span className="small">(probably)</span>
           :
         </p>
-        <Draggable axis="x">
-          <span>
-            <Restaurant
-              name={this.state.restaurants[0].name}
-              img={this.state.restaurants[0].image_url}
-              url={this.state.restaurants[0].url}
-              phone={this.state.restaurants[0].display_phone}
-              call={this.state.restaurants[0].phone}
-              rating={this.state.restaurants[0].rating}
-            />
-          </span>
-        </Draggable>
+        <div className="block x">
+          <Flickity
+            className={'carousel'} // default ''
+            elementType={'div'} // default 'div'
+          >
+            {this.displayRestaurants()}
+          </Flickity>
+        </div>
       </div>
     );
   }
@@ -89,4 +108,15 @@ function msp(state) {
   };
 }
 
-export default connect(msp)(Results);
+function mdp(dispatch) {
+  return {
+    addRests: restaurants => {
+      dispatch({ type: 'ADD_RESTAURANTS', payload: restaurants });
+    }
+  };
+}
+
+export default connect(
+  msp,
+  mdp
+)(Results);

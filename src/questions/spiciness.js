@@ -18,7 +18,14 @@ class Spiciness extends Component {
   spicyUpdate = () => {
     if (this.state.sporty && this.state.scary) {
       const val = this.state.sporty + this.state.scary;
-      this.props.updateTrait('spiciness', val);
+      console.log('spicval', val);
+      if (val < 5) {
+        this.props.updateTrait('spiciness', 'espicy');
+      } else if (6 > val > 4) {
+        this.props.updateTrait('spiciness', 'medium');
+      } else {
+        this.props.updateTrait('spiciness', 'mild');
+      }
     }
   };
 
@@ -42,14 +49,11 @@ class Spiciness extends Component {
       let ctrArrMod = this.state.ctrArr;
       ctrArrMod.unshift(this.state[girl]); //add girl's value back to array
       ctrArrMod.sort(); //sort array
-      this.setState(
-        {
-          ...this.state,
-          ctrArr: ctrArrMod,
-          [girl]: null
-        },
-        () => console.log('spiceClick', this.state.ctrArr)
-      );
+      this.setState({
+        ...this.state,
+        ctrArr: ctrArrMod,
+        [girl]: null
+      });
     }
   };
 
@@ -58,7 +62,7 @@ class Spiciness extends Component {
       <div className="gutter f fw aic jcc fill abs">
         <div className="fa x m1 card">
           <div className="x">{this.props.question}</div>
-          <p className="s4">Rank the following</p>
+          <p className="s4">Click to rank the spice</p>
           <ul className="f">
             <li className="inline-block fa ac mb1 p0 spice baby">
               <input

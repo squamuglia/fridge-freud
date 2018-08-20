@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Sidebar from '../components/sidebar';
+import Profile from '../components/profile';
 import Results from '../components/results';
+import Favorites from '../components/favorites';
 import { connect } from 'react-redux';
 
 class Analysis extends Component {
@@ -41,7 +42,7 @@ class Analysis extends Component {
           <React.Fragment>
             <div className="gutter f fw jcc">
               <div className="fa x m1 card">
-                <Sidebar />
+                <Profile />
               </div>
             </div>
           </React.Fragment>
@@ -49,7 +50,11 @@ class Analysis extends Component {
       }
 
       default:
-        return <p>hiiiiii</p>;
+        return (
+          <div className="wide-gutter f">
+            <Favorites />
+          </div>
+        );
     }
   };
 

@@ -26,7 +26,7 @@ class R1 extends Component {
         <div className="fa x m1 card">
           <div className="x">{this.props.question}</div>
           <p className="s4">What do you make of this shit?</p>
-          <img src="/r/r1.jpg" className="x" />
+          <img src="/r/r1.jpg" className="x" alt="rorschach" />
           <p>I think it's {this.state.guess}</p>
           <ul className="f fw">
             <li className="inline-block mr05 fa ac mb1">
