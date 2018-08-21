@@ -8,6 +8,29 @@ import { hot } from 'react-hot-loader';
 import './index.css';
 
 class App extends Component {
+  componentDidMount() {
+    let token = localStorage.getItem('token');
+    if (token && token !== 'undefined') {
+      fetch(this.props.url + '/api/v1/trytoken', {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: token
+        }
+      })
+        .then(response => response.json())
+        .then(json =>
+          this.setState({
+            token: json.token,
+            username: json.user_details.username,
+            bio: json.user_details.bio,
+            userid: json.user_details.id,
+            display_value: json.user_details.username,
+            logged_in: true
+          })
+        );
+    }
+  }
+
   render() {
     return (
       <Router>
@@ -17,7 +40,7 @@ class App extends Component {
             exact
             path="/"
             component={() =>
-              this.props.question > 6 ? <Redirect to="/analysis" /> : <Form />
+              this.props.question > 8 ? <Redirect to="/analysis" /> : <Form />
             }
           />
           <Route exact path="/analysis" component={() => <Analysis />} />
@@ -52,11 +75,8 @@ function msp(state) {
 
 function mdp(dispatch) {
   return {
-    nextQuestion: questionData => {
-      dispatch({ type: 'NEXT_QUESTION', payload: questionData });
-    },
-    previousQuestion: questionData => {
-      dispatch({ type: 'PREVIOUS_QUESTION', payload: questionData });
+    updateTrait: (trait, state) => {
+      dispatch({ type: 'UPDATE_TRAIT', trait: trait, payload: state });
     }
   };
 }

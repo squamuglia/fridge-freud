@@ -30,10 +30,13 @@ a {
   text-decoration: none;
 }
 
-li > a:hover { color: #888; transition: .2s; }
+li:hover { color: #888; transition: .2s; cursor: pointer; }
 
+.o-4 { opacity:0.4 }
 /*Colors*/
 .bg-light { background:#eaeef1 }
+.bg-white { background:#fff }
+.bg-black { background: #000 }
 
 /* Containers */
 .gutter { max-width: 30rem; margin:0 auto; padding: 0 1rem; }
@@ -257,6 +260,17 @@ input:checked + label {
   background-position: center; 
 }
 
+/* Email */
+.email {
+  background:url(/mail.jpg); 
+  margin: 0 auto 2rem auto;
+  min-width: 10rem;
+  min-height: 10rem;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+}
+
 /* Analysis */
 .fav { 
   float: right;
@@ -267,6 +281,7 @@ input:checked + label {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .unfav {
   float: right;
   margin-top: 0.5em;

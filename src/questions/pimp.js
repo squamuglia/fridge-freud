@@ -39,6 +39,16 @@ class Pimp extends Component {
       ...this.state,
       car: e.target.value
     });
+    if (e.target.value === 'taurus') {
+      this.props.updateTrait('subjective', 'i');
+      this.props.updateTrait('objective', 'n');
+    } else if (e.target.value === 'bronco') {
+      this.props.updateTrait('subjective', 'e');
+      this.props.updateTrait('inductive', 'p');
+    } else {
+      this.props.updateTrait('deductive', 't');
+      this.props.updateTrait('inductive', 'j');
+    }
   };
 
   carDisplay = () => {

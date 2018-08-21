@@ -12,9 +12,9 @@ class Openness extends Component {
       openness: val
     });
     if (val < 4) {
-      this.props.updateTrait('subjective', 0);
+      this.props.updateTrait('inductive', 'j');
     } else {
-      this.props.updateTrait('subjective', 1);
+      this.props.updateTrait('inductive', 'p');
     }
   };
 

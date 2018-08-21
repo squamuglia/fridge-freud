@@ -18,3 +18,6 @@
 
 .fll { float:left }
 .flr { float:right }
+
+.yview { height: 100vh }
+.xview { width: 100vw }

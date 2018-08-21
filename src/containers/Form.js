@@ -5,6 +5,8 @@ import Spiciness from '../questions/spiciness';
 import Pimp from '../questions/pimp';
 import R1 from '../questions/r1';
 import R2 from '../questions/r2';
+import Fear from '../questions/fear';
+import Email from '../questions/email';
 import Location from '../questions/location';
 import { connect } from 'react-redux';
 
@@ -30,6 +32,12 @@ class Form extends Component {
         return <R2 />;
 
       case 6:
+        return <Fear />;
+
+      case 7:
+        return <Email />;
+
+      case 8:
         return <Location />;
 
       default:
@@ -57,6 +65,12 @@ class Form extends Component {
       case 6:
         return <R2 />;
 
+      case 7:
+        return <Fear />;
+
+      case 8:
+        return <Email />;
+
       default:
         return <div />;
     }
@@ -81,6 +95,12 @@ class Form extends Component {
 
       case 7:
         return <R2 />;
+
+      case 8:
+        return <Fear />;
+
+      case 9:
+        return <Email />;
 
       default:
         return <div />;

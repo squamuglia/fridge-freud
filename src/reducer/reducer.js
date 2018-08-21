@@ -1,12 +1,15 @@
 const defaultState = {
-  // url: 'http://localhost:3000',
-  url: 'https://food-freud.herokuapp.com/',
-  user_id: null,
-  token: null,
-  logged_in: false,
-  username: null,
+  url: 'http://localhost:3000',
+  // url: 'https://food-freud.herokuapp.com/',
+  auth: {
+    display_value: '',
+    userid: null,
+    token: null,
+    logged_in: false,
+    username: ''
+  },
   personality: 1,
-  location: 12345,
+  location: null,
   question: 0,
   subjective: 'nobody!',
   objective: 'nobody!',
@@ -72,6 +75,13 @@ export default function reducer(state = defaultState, action) {
       return {
         ...state,
         favorites: remRest
+      };
+
+    case 'LOG_IN':
+      console.log('token added to state', action.payload);
+      return {
+        ...state,
+        auth: action.payload
       };
 
     default:

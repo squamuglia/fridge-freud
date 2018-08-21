@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class Restaurant extends Component {
   favorite = (e, id) => {
-    console.log('fav', id);
     if (e.target.className === 'unfav') {
       e.target.className = 'fav';
       this.props.addFav(id);

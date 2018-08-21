@@ -15,7 +15,7 @@ class R1 extends Component {
     console.log('event', e.target.value);
     this.setState({
       ...this.state,
-      selection: parseInt(e.target.value),
+      selection: parseInt(e.target.value, 10),
       guess: guess
     });
   };

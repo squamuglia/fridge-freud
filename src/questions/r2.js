@@ -6,21 +6,24 @@ class R2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selection: 1,
+      selected: 1,
       guess: '...'
     };
   }
 
   check = (e, guess) => {
-    console.log('event', e.target.value);
     this.setState({
       ...this.state,
-      selection: parseInt(e.target.value),
+      selected: parseInt(e.target.value, 10),
       guess: guess
     });
   };
 
   render() {
+    console.log('q5', this.state.selected);
+    if (this.state.selected === 1) {
+      console.log(this.state.selected === 1);
+    }
     return (
       <div className="gutter f fw aic jcc fill abs">
         <div className="fa x m1 card">
@@ -32,56 +35,56 @@ class R2 extends Component {
             <li className="inline-block mr05 fa ac mb1">
               <input
                 className="none"
-                id="radio1"
+                id="radio5"
                 type="radio"
                 name="low"
                 value="1"
-                checked={this.state.selection === 1}
+                checked={this.state.selected === 1}
                 onChange={e => this.check(e, 'a Butterfly.')}
               />
-              <label for="radio1" className="radio-shadow p1 x50 mb2">
+              <label for="radio5" className="radio-shadow p1 x50 mb2">
                 Butterfly
               </label>
             </li>
             <li className="inline-block mr05 fa ac mb1">
               <input
                 className="none"
-                id="radio2"
+                id="radio6"
                 type="radio"
                 name="low"
                 value="2"
-                checked={this.state.selection === 2}
+                checked={this.state.selected === 2}
                 onChange={e => this.check(e, 'ovaries.')}
               />
-              <label for="radio2" className="radio-shadow p1 x50 mb2">
+              <label for="radio6" className="radio-shadow p1 x50 mb2">
                 Ovaries
               </label>
             </li>
             <li className="inline-block mr05 fa ac mb1">
               <input
                 className="none"
-                id="radio3"
+                id="radio7"
                 type="radio"
                 name="low"
                 value="3"
-                checked={this.state.selection === 3}
+                checked={this.state.selected === 3}
                 onChange={e => this.check(e, 'a Stormtrooper')}
               />
-              <label for="radio3" className="radio-shadow p1 x50 mb2">
+              <label for="radio7" className="radio-shadow p1 x50 mb2">
                 Stormtrooper
               </label>
             </li>
             <li className="inline-block mr05 fa ac mb1">
               <input
                 className="none"
-                id="radio4"
+                id="radio8"
                 type="radio"
                 name="low"
                 value="4"
-                checked={this.state.selection === 4}
+                checked={this.state.selected === 4}
                 onChange={e => this.check(e, 'flip.')}
               />
-              <label for="radio4" className="radio-shadow p1 x50 mb2">
+              <label for="radio8" className="radio-shadow p1 x50 mb2">
                 Flip
               </label>
             </li>
