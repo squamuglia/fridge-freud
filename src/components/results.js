@@ -47,11 +47,12 @@ class Results extends Component {
 
   componentDidMount() {
     const categories = getPersonality(this.props).params;
+    const location = this.props.location ? this.props.location : '10001';
     console.log('getPersonality params', categories);
     fetch(this.props.url + '/api/v1/restaurants/filter', {
       method: 'POST',
       body: JSON.stringify({
-        location: this.props.location,
+        location: location,
         categories: categories
       }),
       headers: {

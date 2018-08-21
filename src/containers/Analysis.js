@@ -25,16 +25,9 @@ class Analysis extends Component {
     switch (this.state.page) {
       case 1: {
         return (
-          <React.Fragment>
-            <div className="wide-gutter f">
-              <Results />
-            </div>
-            <div className="my2 x wide-gutter ar">
-              <button onClick={this.props.updateTrait('question', 0)}>
-                I want a redo!
-              </button>
-            </div>
-          </React.Fragment>
+          <div className="wide-gutter f">
+            <Results />
+          </div>
         );
       }
       case 2: {

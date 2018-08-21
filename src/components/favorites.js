@@ -9,9 +9,7 @@ const displayRestaurants = props => {
     const favorited = props.restaurants.filter(restaurant =>
       props.favorites.includes(restaurant.id)
     );
-    console.log('favorited', favorited);
     return favorited.map(restaurant => {
-      console.log('restaurant log', restaurant);
       return <Restaurant fav={true} restaurant={restaurant} />;
     });
   } else {
@@ -19,14 +17,17 @@ const displayRestaurants = props => {
   }
 };
 
-const Sidebar = props => (
-  <div className="fa f fw mw-75">
-    <p>Faves:</p>
-    <div className="block x">
-      <Flickity>{displayRestaurants(props)}</Flickity>
+const Favorites = props => {
+  console.log('sidebar', props);
+  return (
+    <div className="fa f fw mw-75">
+      <p>Faves:</p>
+      <div className="block x">
+        <Flickity>{displayRestaurants(props)}</Flickity>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 function msp(state) {
   return {
@@ -49,4 +50,4 @@ function mdp(dispatch) {
 export default connect(
   msp,
   mdp
-)(Sidebar);
+)(Favorites);

@@ -6,14 +6,14 @@ class R2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 1,
+      selected: 5,
       guess: '...'
     };
   }
 
   check = (e, guess) => {
+    console.log('r2 event', e.target.value);
     this.setState({
-      ...this.state,
       selected: parseInt(e.target.value, 10),
       guess: guess
     });
@@ -38,8 +38,8 @@ class R2 extends Component {
                 id="radio5"
                 type="radio"
                 name="low"
-                value="1"
-                checked={this.state.selected === 1}
+                value="5"
+                checked={this.state.selected === 5}
                 onChange={e => this.check(e, 'a Butterfly.')}
               />
               <label for="radio5" className="radio-shadow p1 x50 mb2">
@@ -52,8 +52,8 @@ class R2 extends Component {
                 id="radio6"
                 type="radio"
                 name="low"
-                value="2"
-                checked={this.state.selected === 2}
+                value="6"
+                checked={this.state.selected === 6}
                 onChange={e => this.check(e, 'ovaries.')}
               />
               <label for="radio6" className="radio-shadow p1 x50 mb2">
@@ -66,8 +66,8 @@ class R2 extends Component {
                 id="radio7"
                 type="radio"
                 name="low"
-                value="3"
-                checked={this.state.selected === 3}
+                value="7"
+                checked={this.state.selected === 7}
                 onChange={e => this.check(e, 'a Stormtrooper')}
               />
               <label for="radio7" className="radio-shadow p1 x50 mb2">
@@ -80,8 +80,8 @@ class R2 extends Component {
                 id="radio8"
                 type="radio"
                 name="low"
-                value="4"
-                checked={this.state.selected === 4}
+                value="8"
+                checked={this.state.selected === 8}
                 onChange={e => this.check(e, 'flip.')}
               />
               <label for="radio8" className="radio-shadow p1 x50 mb2">

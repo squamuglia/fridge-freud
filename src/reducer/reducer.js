@@ -50,12 +50,13 @@ export default function reducer(state = defaultState, action) {
       };
 
     case 'ADD_RESTAURANTS':
-      const list = [...state.restaurants];
-      list.push(...action.payload);
-      const uniqList = Array.from(new Set(list));
+      let list = [...state.restaurants, ...action.payload];
+      const ids = new Set(list.map(({ id }) => id));
+      list = list.filter(({ id }) => !ids.has(id));
+
       return {
         ...state,
-        restaurants: uniqList
+        restaurants: list
       };
 
     case 'ADD_FAV':

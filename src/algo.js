@@ -44,7 +44,7 @@ export const personalities = [
     params: 'cannabis_clinics, breakfast_brunch'
   },
   { name: 'Drunk', img: '/teeth.svg', params: 'asian' },
-  { name: "You're a nobody!", img: '/teeth.svg', params: 'magicians' }
+  { name: "You're a nobody!", img: '/teeth.svg', params: 'mexican' }
 ];
 
 export function getPersonality(props) {

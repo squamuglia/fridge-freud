@@ -46,7 +46,7 @@ class Restaurant extends Component {
         />
         <div className="px05 pb1">
           <p className="s5">{this.props.restaurant.name}</p>
-          <p className="mb0">{this.props.restaurant.cat}</p>
+          <p className="mb0">{this.props.restaurant.categories[0].title}</p>
           <p className="inline-block mb0">
             {this.props.restaurant.rating}
             /5
