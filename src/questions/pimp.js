@@ -18,6 +18,17 @@ class Pimp extends Component {
     const id = parseInt(ui.node.id, 10);
     const newSelected = [...this.state.selected];
 
+    if (this.state.car === 'taurus') {
+      this.props.updateTrait('subjective', 'i');
+      this.props.updateTrait('objective', 'n');
+    } else if (this.state.car === 'bronco') {
+      this.props.updateTrait('subjective', 'e');
+      this.props.updateTrait('inductive', 'p');
+    } else {
+      this.props.updateTrait('deductive', 't');
+      this.props.updateTrait('inductive', 'j');
+    }
+
     if (ui.y > 90 && !newSelected.includes(id)) {
       newSelected.push(id);
       this.setState({
@@ -108,7 +119,7 @@ class Pimp extends Component {
             <option value="bronco">Bronco</option>
             <option value="aston">Aston</option>
           </select>
-          <PrevNext />
+          <PrevNext show={this.state.selected.length} />
         </div>
       </div>
     );

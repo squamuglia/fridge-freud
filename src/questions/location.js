@@ -15,7 +15,7 @@ const location = props => (
         value={props.location}
         onChange={e => props.updateTrait('location', e.target.value)}
       />
-      <PrevNext />
+      <PrevNext show="end" />
     </div>
   </div>
 );

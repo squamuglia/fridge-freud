@@ -17,13 +17,12 @@ class Fear extends Component {
       binary: parseInt(e.target.value, 10),
       guess: guess
     });
+    guess === 'Yes'
+      ? this.props.updateTrait('objective', 'e')
+      : this.props.updateTrait('objective', 'i');
   };
 
   render() {
-    console.log('q5', this.state.binary);
-    if (this.state.binary === 1) {
-      console.log(this.state.binary === 1);
-    }
     return (
       <div className="gutter f fw aic jcc fill abs">
         <div className="fa x m1 card">
@@ -32,39 +31,22 @@ class Fear extends Component {
             Assuming for the sake of argument you're a 13 year old heterosexual
             boy, are you threatened by speaking to the cutest girl in class?
           </p>
-          <br />
-          <ul className="f fw">
-            <li className="inline-block mr05 fa ac mb1">
-              <input
-                className="none"
-                id="radio5"
-                type="radio"
-                name="low"
-                value="1"
-                checked={this.state.binary === 1}
-                onChange={e => this.check(e, 'Yes')}
-              />
-              <label for="radio5" className="radio-shadow p1 x50 mb2">
-                Yes
-              </label>
-            </li>
-            <li className="inline-block mr05 fa ac mb1">
-              <input
-                className="none"
-                id="radio6"
-                type="radio"
-                name="low"
-                value="2"
-                checked={this.state.binary === 2}
-                onChange={e => this.check(e, 'No')}
-              />
-              <label for="radio6" className="radio-shadow p1 x50 mb2">
-                No
-              </label>
-            </li>
-          </ul>
-          <br />
-          <PrevNext />
+          {this.state.guess}
+          <div className="f fw my1">
+            <button
+              className="inline-block mr05 fa ac mb1"
+              onClick={e => this.check(e, 'Yes')}
+            >
+              Yes
+            </button>
+            <button
+              className="inline-block mr05 fa ac mb1"
+              onClick={e => this.check(e, 'No')}
+            >
+              No
+            </button>
+          </div>
+          <PrevNext show={true} />
         </div>
       </div>
     );

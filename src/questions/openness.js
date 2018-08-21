@@ -127,7 +127,7 @@ class Openness extends Component {
               </label>
             </li>
           </ul>
-          <PrevNext />
+          <PrevNext show={this.state.openness} />
         </div>
       </div>
     );

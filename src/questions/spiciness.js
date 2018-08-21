@@ -130,7 +130,7 @@ class Spiciness extends Component {
               </label>
             </li>
           </ul>
-          <PrevNext />
+          <PrevNext show={!this.state.ctrArr.length} />
         </div>
       </div>
     );

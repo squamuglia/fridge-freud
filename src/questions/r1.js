@@ -6,16 +6,15 @@ class R1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selection: 1,
-      guess: '...'
+      guess: '...',
+      show: false
     };
   }
 
   check = (e, guess) => {
-    console.log('r1 event', e.target.value);
     this.setState({
-      selection: parseInt(e.target.value, 10),
-      guess: guess
+      guess: guess,
+      show: true
     });
   };
 
@@ -27,66 +26,34 @@ class R1 extends Component {
           <p className="s4">What do you make of this shit?</p>
           <img src="/r/r1.jpg" className="x" alt="rorschach" />
           <p>I think it's {this.state.guess}</p>
-          <ul className="f fw">
-            <li className="inline-block mr05 fa ac mb1">
-              <input
-                className="none"
-                id="radio1"
-                type="radio"
-                name="low"
-                value="1"
-                checked={this.state.selection === 1}
-                onChange={e => this.check(e, 'a bat.')}
-              />
-              <label for="radio1" className="radio-shadow p1 x50 mb2">
-                Bat
-              </label>
-            </li>
-            <li className="inline-block mr05 fa ac mb1">
-              <input
-                className="none"
-                id="radio2"
-                type="radio"
-                name="low"
-                value="2"
-                checked={this.state.selection === 2}
-                onChange={e => this.check(e, 'ovaries.')}
-              />
-              <label for="radio2" className="radio-shadow p1 x50 mb2">
-                Ovaries
-              </label>
-            </li>
-            <li className="inline-block mr05 fa ac mb1">
-              <input
-                className="none"
-                id="radio3"
-                type="radio"
-                name="low"
-                value="3"
-                checked={this.state.selection === 3}
-                onChange={e => this.check(e, 'Mario')}
-              />
-              <label for="radio3" className="radio-shadow p1 x50 mb2">
-                Mario
-              </label>
-            </li>
-            <li className="inline-block mr05 fa ac mb1">
-              <input
-                className="none"
-                id="radio4"
-                type="radio"
-                name="low"
-                value="4"
-                checked={this.state.selection === 4}
-                onChange={e => this.check(e, 'Woody Woodpecker.')}
-              />
-              <label for="radio4" className="radio-shadow p1 x50 mb2">
-                Woody Woodpecker
-              </label>
-            </li>
-          </ul>
+          <div className="f fw mb2">
+            <button
+              className="inline-block mr05 fa ac mb1"
+              onClick={e => this.check(e, 'a bat.')}
+            >
+              Bat
+            </button>
+            <button
+              className="inline-block mr05 fa ac mb1"
+              onClick={e => this.check(e, 'ovaries.')}
+            >
+              Ovaries
+            </button>
+            <button
+              className="inline-block mr05 fa ac mb1"
+              onClick={e => this.check(e, 'Mario')}
+            >
+              Mario
+            </button>
+            <button
+              className="inline-block mr05 fa ac mb1"
+              onClick={e => this.check(e, 'Woody Woodpecker.')}
+            >
+              Woody Woodpecker
+            </button>
+          </div>
 
-          <PrevNext />
+          <PrevNext show={this.state.show} />
         </div>
       </div>
     );
