@@ -9,11 +9,19 @@ const displayRestaurants = props => {
     const favorited = props.restaurants.filter(restaurant =>
       props.favorites.includes(restaurant.id)
     );
-    return favorited.map(restaurant => {
-      return <Restaurant fav={true} restaurant={restaurant} />;
-    });
+    return (
+      <Flickity>
+        {favorited.map(restaurant => {
+          return <Restaurant fav={true} restaurant={restaurant} />;
+        })}
+      </Flickity>
+    );
   } else {
-    return <h1>No Faves Yet!</h1>;
+    return (
+      <div className="mh-20 f aic jcc">
+        <h1>No Faves Yet!</h1>
+      </div>
+    );
   }
 };
 
@@ -22,9 +30,7 @@ const Favorites = props => {
   return (
     <div className="fa f fw mw-75">
       <p>Faves:</p>
-      <div className="block x">
-        <Flickity>{displayRestaurants(props)}</Flickity>
-      </div>
+      <div className="block x">{displayRestaurants(props)}</div>
     </div>
   );
 };

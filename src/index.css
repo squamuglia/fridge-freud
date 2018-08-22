@@ -317,3 +317,5 @@ input:checked + label {
 }
 
 .__title { height: 3rem }
+
+.mh-20 { min-height: 20rem }

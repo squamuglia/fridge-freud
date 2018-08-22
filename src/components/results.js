@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Restaurant from './restaurant';
 import { connect } from 'react-redux';
+import { getPersonality } from '../algo';
 import Flickity from 'react-flickity-component';
 
 class Results extends Component {
@@ -13,11 +14,14 @@ class Results extends Component {
   render() {
     return (
       <div className="fa f fw mw-75">
-        <p className="s4 b upper x mb0">
-          You're an {this.props.subjective}
+        <p className="s4 upper x mb0">
+          <span className="b">
+            You're a(n) {getPersonality(this.props).name}
+          </span>{' '}
+          ({this.props.subjective}
           {this.props.objective}
           {this.props.deductive}
-          {this.props.inductive}
+          {this.props.inductive})
         </p>
         <p className="mt0">
           Behold, your darkest desires <span className="small">(probably)</span>

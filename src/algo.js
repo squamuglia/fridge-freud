@@ -2,18 +2,18 @@ export const personalities = [
   { name: 'Fanny Pack', img: '/teeth.svg', params: 'asian' },
   {
     name: 'Rolling Backpack Kid',
-    img: '/teeth.svg',
+    img: '/rolling.svg',
     params:
       'japacurry,ramen,izakaya,blowfish,okinawan,soba,udon,tonkatsu,riceshop,conveyorsushi,waffles'
   },
   {
     name: 'Commandante',
-    img: '/teeth.svg',
+    img: '/commandante.svg',
     params: 'cuban,russian,cambodian,bistros'
   },
   {
     name: 'Morrissey',
-    img: '/teeth.svg',
+    img: '/morrissey.svg',
     params:
       'popuprestaurants,vietnamese,ukranian,mexican,poutineries,malaysian,indonesian,dumplings,szechuan'
   },
@@ -31,7 +31,7 @@ export const personalities = [
   },
   {
     name: 'Golden Retriever',
-    img: '/teeth.svg',
+    img: '/retriever.svg',
     params:
       'rotisserie_chicken,sandwiches,tex-mex,steak,poutineries,potato,polish,diners,foodstands'
   },
@@ -44,13 +44,13 @@ export const personalities = [
   { name: 'Anal Retentive', img: '/paper.svg', params: 'salad' },
   {
     name: 'Jewish Mom',
-    img: '/teeth.svg',
+    img: '/bagel.svg',
     params:
       'jewish,kosher,mediterranean,greek,norwegian,potato,polish,diners,ukrainian,schnitzel,salad,dimsum,cantonese'
   },
   {
     name: 'Virgo',
-    img: '/teeth.svg',
+    img: '/virgo.svg',
     params:
       'acaibowls,tapas,dancerestaurants,chilean,cuban,vegan,salad,ethiopian,bistros,dinnertheater,diners,cafes'
   },
@@ -78,7 +78,7 @@ export const personalities = [
   },
   {
     name: 'Drunk',
-    img: '/teeth.svg',
+    img: '/beer.svg',
     params:
       'delicatessen,bbq,foodstands,diners,burgers,hotdogs,cafeteria,convenience,conveyorsushi,beergarden,beerhall,belgian,coffeeshops'
   },
