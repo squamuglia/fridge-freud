@@ -121,7 +121,6 @@ export default function reducer(state = defaultState, action) {
       };
 
     case 'ADD_FAV':
-      console.log('addfav payload', action.payload);
       const newRest = state.favorites;
       newRest.push(action.payload);
       const uniqFav = Array.from(new Set(newRest));
@@ -139,7 +138,6 @@ export default function reducer(state = defaultState, action) {
       };
 
     case 'REMOVE_FAV':
-      console.log('remfav payload', action.payload);
       let remRest = state.favorites;
       const index = remRest.indexOf(action.payload);
       remRest.splice(index, 1);
@@ -157,7 +155,6 @@ export default function reducer(state = defaultState, action) {
       };
 
     case 'LOG_IN':
-      console.log('token added to state', action.payload);
       return {
         ...state,
         auth: action.payload

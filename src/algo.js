@@ -83,7 +83,7 @@ export const personalities = [
     params:
       'delicatessen,bbq,foodstands,diners,burgers,hotdogs,cafeteria,convenience,conveyorsushi,beergarden,beerhall,belgian,coffeeshops'
   },
-  { name: "You're a nobody!", img: '/teeth.svg', params: 'mexican' }
+  { name: 'Nobody!', img: '/teeth.svg', params: 'mexican' }
 ];
 
 export function getPersonality(props) {

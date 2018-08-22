@@ -2,20 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Restaurant extends Component {
-  state = {
-    fav: this.props.restaurant.fav
-  };
-
   favorite = (e, id) => {
     if (e.target.className === 'unfav') {
-      console.log('fav');
       e.target.className = 'fav';
-      this.setState({ fav: true });
       this.props.addFav(id);
     } else {
-      console.log('unfav');
       e.target.className = 'unfav';
-      this.setState({ fav: false });
       this.props.remFav(id);
     }
   };
@@ -43,7 +35,7 @@ class Restaurant extends Component {
       <div
         id={this.props.restaurant.id}
         key={this.props.restaurant.id}
-        className="gutter card bg-light mb2"
+        className="gutter card bg-light mb2 __res"
       >
         <div
           className="__res-img"

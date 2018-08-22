@@ -60,6 +60,8 @@ li:hover { color: #888; transition: .2s; cursor: pointer; }
 
 .sq { width: 50px; height: 50px; }
 
+.__res { width: 18rem; }
+
 .__res-img { 
   height: 200px;
   width: 100%;
@@ -305,7 +307,6 @@ input:checked + label {
 .flickity-prev-next-button.previous {
   margin-top: 1rem;
 }
-
 
 .flickity-button-icon {
   width: 20px;

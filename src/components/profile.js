@@ -23,20 +23,16 @@ const Profile = props => {
       <p>Spiciness: {props.spiciness}</p>
       <ul>
         <li>
-          <span className="b">Extraversion</span>
-          /Introversion
+          <span id="e">Extraversion</span>/<span id="i">Introversion</span>
         </li>
         <li>
-          <span className="b">Sensing</span>
-          /Intuition
+          <span id="s">Sensing</span>/<span id="n">Intuition</span>
         </li>
         <li>
-          <span className="b">Thinking</span>
-          /Feeling
+          <span id="t">Thinking</span>/<span id="f">Feeling</span>
         </li>
         <li>
-          <span className="b">Judging</span>
-          /Perceiving
+          <span id="j">Judging</span>/<span id="p">Perceiving</span>
         </li>
       </ul>
     </div>
