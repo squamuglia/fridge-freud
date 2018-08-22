@@ -299,7 +299,13 @@ input:checked + label {
 
 .flickity-prev-next-button.next {
   float: right;
+  margin-top: 1rem;
 }
+
+.flickity-prev-next-button.previous {
+  margin-top: 1rem;
+}
+
 
 .flickity-button-icon {
   width: 20px;
@@ -309,3 +315,5 @@ input:checked + label {
 .flickity-page-dots {
   display: none;
 }
+
+.__title { height: 3rem }

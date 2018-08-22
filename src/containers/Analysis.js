@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Profile from '../components/profile';
 import Results from '../components/results';
 import Favorites from '../components/favorites';
@@ -78,6 +79,12 @@ class Analysis extends Component {
     }
   };
 
+  reset = () => {
+    console.log('boop');
+    this.props.resetState();
+    this.props.history.push('/');
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -93,6 +100,9 @@ class Analysis extends Component {
           </div>
         </div>
         {this.changePage()}
+        <div className="x ac mt1">
+          <button onClick={this.reset}>Retake the Assessment</button>
+        </div>
       </React.Fragment>
     );
   }
@@ -118,11 +128,16 @@ function mdp(dispatch) {
     },
     addRests: restaurants => {
       dispatch({ type: 'ADD_RESTAURANTS', payload: restaurants });
+    },
+    resetState: () => {
+      dispatch({ type: 'RESET' });
     }
   };
 }
 
-export default connect(
-  msp,
-  mdp
-)(Analysis);
+export default withRouter(
+  connect(
+    msp,
+    mdp
+  )(Analysis)
+);

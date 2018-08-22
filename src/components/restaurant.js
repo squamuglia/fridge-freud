@@ -32,7 +32,7 @@ class Restaurant extends Component {
       <div
         id={this.props.restaurant.id}
         key={this.props.restaurant.id}
-        className="gutter card bg-light mb1"
+        className="gutter card bg-light mb2"
       >
         <div
           className="__res-img"
@@ -45,7 +45,7 @@ class Restaurant extends Component {
           onClick={e => this.favorite(e, this.props.restaurant.id)}
         />
         <div className="px05 pb1">
-          <p className="s5">{this.props.restaurant.name}</p>
+          <p className="s5 b __title">{this.props.restaurant.name}</p>
           <p className="mb0">{this.props.restaurant.categories[0].title}</p>
           <p className="inline-block mb0">
             {this.props.restaurant.rating}

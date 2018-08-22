@@ -65,6 +65,42 @@ export default function reducer(state = defaultState, action) {
         break;
       }
 
+    case 'RESET':
+      console.log('reset state');
+      return {
+        ...state,
+        question: 0,
+        subjective: 'nobody!',
+        objective: 'nobody!',
+        deductive: 'nobody!',
+        inductive: 'nobody!',
+        spiciness: 0,
+        favorites: [],
+        restaurants: [
+          {
+            id: '1',
+            image_url: '/chef.jpg',
+            name: 'Loading...',
+            categories: [{ title: ' ' }],
+            rating: 0
+          },
+          {
+            id: '1',
+            image_url: '/chef.jpg',
+            name: 'Loading...',
+            categories: [{ title: ' ' }],
+            rating: 0
+          },
+          {
+            id: '1',
+            image_url: '/chef.jpg',
+            name: 'Loading...',
+            categories: [{ title: ' ' }],
+            rating: 0
+          }
+        ]
+      };
+
     case 'UPDATE_TRAIT':
       return {
         ...state,
