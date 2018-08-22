@@ -78,6 +78,16 @@ class Pimp extends Component {
           <div className="x">{this.props.question}</div>
           <p className="s4 mb0">Pimp this ride.</p>
           <p className="small">Be sure to view your options in the dropdown</p>
+          <select
+            className="mt1"
+            onChange={this.carSelect}
+            value={this.state.car}
+          >
+            <option value="taurus">Taurus</option>
+            <option value="bronco">Bronco</option>
+            <option value="aston">Aston</option>
+          </select>
+
           <div className="x h-25 my1">
             <Draggable onDrag={this.handleDrag}>
               <div className="sq rel wheel z10 inline-block mr025" id="1" />
@@ -111,15 +121,6 @@ class Pimp extends Component {
             </Draggable>
             {this.carDisplay()}
           </div>
-          <select
-            className="mt1"
-            onChange={this.carSelect}
-            value={this.state.car}
-          >
-            <option value="taurus">Taurus</option>
-            <option value="bronco">Bronco</option>
-            <option value="aston">Aston</option>
-          </select>
           <PrevNext show={this.state.selected.length} />
         </div>
       </div>

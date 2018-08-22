@@ -22,21 +22,24 @@ const defaultState = {
       id: '1',
       image_url: '/chef.jpg',
       name: 'Loading...',
-      categories: [{ title: ' ' }],
+      categories: [{ title: 'nothing' }],
+      location: { address1: 'nowhere' },
       rating: 0
     },
     {
       id: '1',
       image_url: '/chef.jpg',
       name: 'Loading...',
-      categories: [{ title: ' ' }],
+      categories: [{ title: 'nothing' }],
+      location: { address1: 'nowhere' },
       rating: 0
     },
     {
       id: '1',
       image_url: '/chef.jpg',
       name: 'Loading...',
-      categories: [{ title: ' ' }],
+      categories: [{ title: 'nothing' }],
+      location: { address1: 'nowhere' },
       rating: 0
     }
   ]
@@ -81,21 +84,21 @@ export default function reducer(state = defaultState, action) {
             id: '1',
             image_url: '/chef.jpg',
             name: 'Loading...',
-            categories: [{ title: ' ' }],
+            categories: [{ title: 'nothing' }],
             rating: 0
           },
           {
             id: '1',
             image_url: '/chef.jpg',
             name: 'Loading...',
-            categories: [{ title: ' ' }],
+            categories: [{ title: 'nothing' }],
             rating: 0
           },
           {
             id: '1',
             image_url: '/chef.jpg',
             name: 'Loading...',
-            categories: [{ title: ' ' }],
+            categories: [{ title: 'nothing' }],
             rating: 0
           }
         ]
@@ -109,28 +112,48 @@ export default function reducer(state = defaultState, action) {
 
     case 'ADD_RESTAURANTS':
       let list = [...action.payload];
+      list.sort(() => {
+        return 0.5 - Math.random();
+      });
       return {
         ...state,
         restaurants: list
       };
 
     case 'ADD_FAV':
+      console.log('addfav payload', action.payload);
       const newRest = state.favorites;
       newRest.push(action.payload);
       const uniqFav = Array.from(new Set(newRest));
-
+      const restArray = state.restaurants;
+      const restaurant = state.restaurants.find(
+        ({ id }) => id === action.payload
+      );
+      const ind = restArray.indexOf(restaurant);
+      restaurant['fav'] = true;
+      restArray[ind] = restaurant;
       return {
         ...state,
-        favorites: uniqFav
+        favorites: uniqFav,
+        restaurants: restArray
       };
 
     case 'REMOVE_FAV':
+      console.log('remfav payload', action.payload);
       let remRest = state.favorites;
       const index = remRest.indexOf(action.payload);
       remRest.splice(index, 1);
+      const restArrayunf = state.restaurants;
+      const restaurantunf = state.restaurants.find(
+        ({ id }) => id === action.payload
+      );
+      const unf = restArrayunf.indexOf(restaurantunf);
+      restaurantunf['fav'] = false;
+      restArrayunf[unf] = restaurantunf;
       return {
         ...state,
-        favorites: remRest
+        favorites: remRest,
+        restaurants: restArrayunf
       };
 
     case 'LOG_IN':

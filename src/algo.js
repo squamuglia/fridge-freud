@@ -1,5 +1,5 @@
 export const personalities = [
-  { name: 'Fanny Pack', img: '/teeth.svg', params: 'asian' },
+  { name: 'Fanny Pack', img: '/fanny.svg', params: 'asian' },
   {
     name: 'Rolling Backpack Kid',
     img: '/rolling.svg',
@@ -56,7 +56,7 @@ export const personalities = [
   },
   {
     name: 'Dale Carnegie',
-    img: '/teeth.svg',
+    img: '/handshake.svg',
     params: 'salad,tapas,swedish,mediterranean,thai'
   },
   {
@@ -67,14 +67,15 @@ export const personalities = [
   },
   {
     name: 'Balloon Boy',
-    img: '/teeth.svg',
+    img: '/ballon.svg',
     params:
       'hawaiian,bubbletea,icecream,shavedice,shavedsnow,candy,waffles,milkbars'
   },
   {
     name: 'Cryptoboi',
     img: '/bitcoin.svg',
-    params: 'cannabis_clinics,breakfast_brunch,cantonese,buffets,coffeeshops'
+    params:
+      'cannabis_clinics,breakfast_brunch,cantonese,buffets,coffeeshops, virtualrealitycenters'
   },
   {
     name: 'Drunk',
@@ -125,3 +126,5 @@ export function getPersonality(props) {
       return personalities[16];
   }
 }
+
+export const personalityDesc = props => {};

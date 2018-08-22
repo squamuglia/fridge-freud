@@ -2,26 +2,37 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Restaurant extends Component {
+  state = {
+    fav: this.props.restaurant.fav
+  };
+
   favorite = (e, id) => {
     if (e.target.className === 'unfav') {
+      console.log('fav');
       e.target.className = 'fav';
+      this.setState({ fav: true });
       this.props.addFav(id);
     } else {
+      console.log('unfav');
       e.target.className = 'unfav';
+      this.setState({ fav: false });
       this.props.remFav(id);
     }
   };
 
   renderFav = () => {
-    if (this.props.fav === true) {
+    if (this.props.restaurant.fav) {
       return (
-        <span className="fav" onClick={e => this.favorite(e, this.props.id)} />
+        <span
+          className="fav"
+          onClick={e => this.favorite(e, this.props.restaurant.id)}
+        />
       );
     } else {
       return (
         <span
           className="unfav"
-          onClick={e => this.favorite(e, this.props.id)}
+          onClick={e => this.favorite(e, this.props.restaurant.id)}
         />
       );
     }
@@ -40,21 +51,26 @@ class Restaurant extends Component {
             backgroundImage: 'url(' + this.props.restaurant.image_url + ')'
           }}
         />
-        <span
+        {/* <span
           className="unfav"
           onClick={e => this.favorite(e, this.props.restaurant.id)}
-        />
+        /> */}
+        {this.renderFav()}
         <div className="px05 pb1">
           <p className="s5 b __title">{this.props.restaurant.name}</p>
-          <p className="mb0">{this.props.restaurant.categories[0].title}</p>
-          <p className="inline-block mb0">
+          <p className="m0">{this.props.restaurant.location.address1}</p>
+          <p className="m0">{this.props.restaurant.categories[0].title}</p>
+          <p className="inline-block m0">
             {this.props.restaurant.rating}
             /5
           </p>
           {' | '}
-          <p className="inline-block mb0">{this.props.restaurant.price}</p>
+          <p className="inline-block m0">{this.props.restaurant.price}</p>
           <a href={'tel:' + this.props.restaurant.phone}>
-            <p>{this.props.restaurant.display_phone}</p>
+            <p className="mt0">
+              P:
+              {this.props.restaurant.display_phone}
+            </p>
           </a>
           <a href={this.props.restaurant.url} target="_blank">
             <button>go already</button>
