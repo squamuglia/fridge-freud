@@ -14,12 +14,30 @@ const Profile = props => {
           backgroundSize: 'cover'
         }}
       />
+      <p className="s4 b upper">
+        {props.subjective}
+        {props.objective}
+        {props.deductive}
+        {props.inductive}
+      </p>
+      <p>Spiciness: {props.spiciness}</p>
       <ul>
-        <li>Subjective: {props.subjective}</li>
-        <li>Objective: {props.objective}</li>
-        <li>Deductive: {props.deductive}</li>
-        <li>Inductive: {props.inductive}</li>
-        <li>Spiciness: {props.spiciness}</li>
+        <li>
+          <span className="b">Extraversion</span>
+          /Introversion
+        </li>
+        <li>
+          <span className="b">Sensing</span>
+          /Intuition
+        </li>
+        <li>
+          <span className="b">Thinking</span>
+          /Feeling
+        </li>
+        <li>
+          <span className="b">Judging</span>
+          /Perceiving
+        </li>
       </ul>
     </div>
   );

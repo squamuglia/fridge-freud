@@ -7,7 +7,8 @@ class Email extends Component {
     super(props);
     this.state = {
       binary: 1,
-      guess: '...'
+      guess: '...',
+      show: false
     };
   }
 
@@ -15,7 +16,8 @@ class Email extends Component {
     this.setState({
       ...this.state,
       binary: parseInt(e.target.value, 10),
-      guess: guess
+      guess: guess,
+      show: true
     });
     guess === 'Terrible'
       ? this.props.updateTrait('inductive', 'j')
@@ -44,7 +46,7 @@ class Email extends Component {
               Indifferent
             </button>
           </ul>
-          <PrevNext show={true} />
+          <PrevNext show={this.state.show} />
         </div>
       </div>
     );

@@ -16,6 +16,15 @@ class R2 extends Component {
       guess: guess,
       show: true
     });
+    if (guess === 'butterfly') {
+      this.props.updateTrait('inductive', 'j');
+    } else if (guess === 'ovaries') {
+      this.props.updateTrait('deductive', 'f');
+    } else if (guess === 'stormtrooper') {
+      this.props.updateTrait('deductive', 's');
+    } else {
+      this.props.updateTrait('inductive', 'p');
+    }
   };
 
   render() {
@@ -41,15 +50,15 @@ class R2 extends Component {
             </button>
             <button
               className="inline-block mr05 fa ac mb1"
-              onClick={e => this.check(e, 'a Stormtrooper')}
+              onClick={e => this.check(e, 'a Stormtrooper.')}
             >
               Stormtrooper
             </button>
             <button
               className="inline-block mr05 fa ac mb1"
-              onClick={e => this.check(e, 'flip.')}
+              onClick={e => this.check(e, 'Mickey Rourke.')}
             >
-              Flip
+              Mickey Rourke
             </button>
           </div>
 

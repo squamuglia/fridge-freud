@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Profile from '../components/profile';
 import Results from '../components/results';
 import Favorites from '../components/favorites';
+import { getPersonality } from '../algo';
 import { connect } from 'react-redux';
 
 class Analysis extends Component {
@@ -10,6 +11,32 @@ class Analysis extends Component {
     this.state = {
       page: 1
     };
+  }
+
+  addRestaurants = restaurants => {
+    console.log('add restaurants', restaurants);
+    if (restaurants.businesses && restaurants.businesses.length) {
+      this.props.addRests(restaurants.businesses);
+    }
+  };
+
+  componentDidMount() {
+    const categories = getPersonality(this.props).params;
+    const location = this.props.location ? this.props.location : '10001';
+    console.log('getPersonality params', categories);
+    fetch(this.props.url + '/api/v1/restaurants/filter', {
+      method: 'POST',
+      body: JSON.stringify({
+        location: location,
+        categories: categories
+      }),
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    })
+      .then(response => response.json())
+      .catch(error => console.error(`Fetch Error =\n`, error))
+      .then(r => this.addRestaurants(r));
   }
 
   navLink = p => {
@@ -73,7 +100,14 @@ class Analysis extends Component {
 
 function msp(state) {
   return {
-    question: state.question
+    location: state.location,
+    url: state.url,
+    restaurants: state.restaurants,
+    question: state.question,
+    subjective: state.subjective,
+    inductive: state.inductive,
+    objective: state.objective,
+    deductive: state.deductive
   };
 }
 
@@ -81,6 +115,9 @@ function mdp(dispatch) {
   return {
     updateTrait: (trait, score) => {
       dispatch({ type: 'UPDATE_TRAIT', trait: trait, payload: score });
+    },
+    addRests: restaurants => {
+      dispatch({ type: 'ADD_RESTAURANTS', payload: restaurants });
     }
   };
 }

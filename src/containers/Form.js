@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Intro from '../questions/intro';
-import Openness from '../questions/openness';
+import Foot from '../questions/foot';
 import Spiciness from '../questions/spiciness';
 import Pimp from '../questions/pimp';
 import R1 from '../questions/r1';
@@ -17,7 +17,7 @@ class Form extends Component {
         return <Intro />;
 
       case 1:
-        return <Openness />;
+        return <Foot />;
 
       case 2:
         return <Spiciness />;
@@ -51,7 +51,7 @@ class Form extends Component {
         return <Intro />;
 
       case 2:
-        return <Openness />;
+        return <Foot />;
 
       case 3:
         return <Spiciness />;
@@ -82,7 +82,7 @@ class Form extends Component {
         return <Intro />;
 
       case 3:
-        return <Openness />;
+        return <Foot />;
 
       case 4:
         return <Spiciness />;

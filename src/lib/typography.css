@@ -81,9 +81,14 @@ strong, .b {
 em, .i {
   font-style: italic;
 }
-.caps {
+.upper {
   text-transform: uppercase;
 }
+
+.caps {
+  text-transform: capitalize;
+}
+
 .no-under {
   text-decoration: none;
 }

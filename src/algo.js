@@ -21,7 +21,8 @@ export const personalities = [
   {
     name: 'Golden Retriever',
     img: '/teeth.svg',
-    params: 'rotisserie_chicken, sandwiches, tex-mex, steak, poutineries, potat'
+    params:
+      'rotisserie_chicken, sandwiches, tex-mex, steak, poutineries, potato, polish, diner'
   },
   {
     name: 'Chad Muska',

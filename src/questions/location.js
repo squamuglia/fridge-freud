@@ -7,6 +7,11 @@ const location = props => (
     <div className="fa x m1 card">
       <div className="x">{props.question}</div>
       <p className="s4">Oh wait, where do you eat? </p>
+      <p className="small">
+        (Just as an aside, if you're not in a major metropolitan area, this
+        might not work at all. In which case I recommend going to a Wawa or
+        Publix.)
+      </p>
       <label for="zip">Zip Code</label>
       <input
         type="text"

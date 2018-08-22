@@ -7,7 +7,8 @@ class Fear extends Component {
     super(props);
     this.state = {
       binary: 1,
-      guess: '...'
+      guess: '...',
+      show: false
     };
   }
 
@@ -15,11 +16,12 @@ class Fear extends Component {
     this.setState({
       ...this.state,
       binary: parseInt(e.target.value, 10),
-      guess: guess
+      guess: guess,
+      show: true
     });
     guess === 'Yes'
-      ? this.props.updateTrait('objective', 'e')
-      : this.props.updateTrait('objective', 'i');
+      ? this.props.updateTrait('subjective', 'e')
+      : this.props.updateTrait('subjective', 'i');
   };
 
   render() {
@@ -46,7 +48,7 @@ class Fear extends Component {
               No
             </button>
           </div>
-          <PrevNext show={true} />
+          <PrevNext show={this.state.show} />
         </div>
       </div>
     );

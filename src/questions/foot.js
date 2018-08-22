@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PrevNext from '../components/prev-next';
 import { connect } from 'react-redux';
 
-class Openness extends Component {
+class Foot extends Component {
   state = {
     openness: null
   };
@@ -12,8 +12,14 @@ class Openness extends Component {
       openness: val
     });
     if (val < 4) {
+      this.props.updateTrait('subjective', 'i');
+      this.props.updateTrait('objective', 's');
+      this.props.updateTrait('deductive', 't');
       this.props.updateTrait('inductive', 'j');
     } else {
+      this.props.updateTrait('subjective', 'i');
+      this.props.updateTrait('objective', 's');
+      this.props.updateTrait('deductive', 't');
       this.props.updateTrait('inductive', 'p');
     }
   };
@@ -36,9 +42,9 @@ class Openness extends Component {
                 name="low"
                 value="1"
                 checked={this.state.openness === 1}
-                onChange={e => this.updateOpenness(1)}
+                onChange={() => this.updateOpenness(1)}
               />
-              <label for="radio1" className="radio-shadow p1">
+              <label htmlFor="radio1" className="radio-shadow p1">
                 1
               </label>
             </li>
@@ -50,9 +56,9 @@ class Openness extends Component {
                 name="low"
                 value="2"
                 checked={this.state.openness === 2}
-                onChange={e => this.updateOpenness(2)}
+                onChange={() => this.updateOpenness(2)}
               />
-              <label for="radio2" className="radio-shadow p1">
+              <label htmlFor="radio2" className="radio-shadow p1">
                 2
               </label>
             </li>
@@ -64,9 +70,9 @@ class Openness extends Component {
                 name="low"
                 value="3"
                 checked={this.state.openness === 3}
-                onChange={e => this.updateOpenness(3)}
+                onChange={() => this.updateOpenness(3)}
               />
-              <label for="radio3" className="radio-shadow p1">
+              <label htmlFor="radio3" className="radio-shadow p1">
                 3
               </label>
             </li>
@@ -78,9 +84,9 @@ class Openness extends Component {
                 name="low"
                 value="4"
                 checked={this.state.openness === 4}
-                onChange={e => this.updateOpenness(4)}
+                onChange={() => this.updateOpenness(4)}
               />
-              <label for="radio4" className="radio-shadow p1">
+              <label htmlFor="radio4" className="radio-shadow p1">
                 4
               </label>
             </li>
@@ -92,9 +98,9 @@ class Openness extends Component {
                 name="low"
                 value="5"
                 checked={this.state.openness === 5}
-                onChange={e => this.updateOpenness(5)}
+                onChange={() => this.updateOpenness(5)}
               />
-              <label for="radio5" className="radio-shadow p1">
+              <label htmlFor="radio5" className="radio-shadow p1">
                 5
               </label>
             </li>
@@ -106,9 +112,9 @@ class Openness extends Component {
                 name="low"
                 value="6"
                 checked={this.state.openness === 6}
-                onChange={e => this.updateOpenness(6)}
+                onChange={() => this.updateOpenness(6)}
               />
-              <label for="radio6" className="radio-shadow p1">
+              <label htmlFor="radio6" className="radio-shadow p1">
                 6
               </label>
             </li>
@@ -120,9 +126,9 @@ class Openness extends Component {
                 name="low"
                 value="7"
                 checked={this.state.openness === 7}
-                onChange={e => this.updateOpenness(7)}
+                onChange={() => this.updateOpenness(7)}
               />
-              <label for="radio7" className="radio-shadow p1">
+              <label htmlFor="radio7" className="radio-shadow p1">
                 7
               </label>
             </li>
@@ -152,4 +158,4 @@ function mdp(dispatch) {
 export default connect(
   msp,
   mdp
-)(Openness);
+)(Foot);

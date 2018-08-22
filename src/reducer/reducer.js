@@ -1,6 +1,6 @@
 const defaultState = {
-  url: 'http://localhost:3000',
-  // url: 'https://food-freud.herokuapp.com/',
+  // url: 'http://localhost:3000',
+  url: 'https://food-freud.herokuapp.com/',
   auth: {
     display_value: '',
     userid: null,
@@ -17,7 +17,29 @@ const defaultState = {
   inductive: 'nobody!',
   spiciness: 0,
   favorites: [],
-  restaurants: []
+  restaurants: [
+    {
+      id: '1',
+      image_url: '/chef.jpg',
+      name: 'Loading...',
+      categories: [{ title: ' ' }],
+      rating: 0
+    },
+    {
+      id: '1',
+      image_url: '/chef.jpg',
+      name: 'Loading...',
+      categories: [{ title: ' ' }],
+      rating: 0
+    },
+    {
+      id: '1',
+      image_url: '/chef.jpg',
+      name: 'Loading...',
+      categories: [{ title: ' ' }],
+      rating: 0
+    }
+  ]
 };
 
 // REDUCERS
@@ -50,10 +72,7 @@ export default function reducer(state = defaultState, action) {
       };
 
     case 'ADD_RESTAURANTS':
-      let list = [...state.restaurants, ...action.payload];
-      const ids = new Set(list.map(({ id }) => id));
-      list = list.filter(({ id }) => !ids.has(id));
-
+      let list = [...action.payload];
       return {
         ...state,
         restaurants: list
