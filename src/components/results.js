@@ -13,7 +13,13 @@ class Results extends Component {
   render() {
     return (
       <div className="fa f fw mw-75">
-        <p>
+        <p className="s4 b upper x mb0">
+          You're an {this.props.subjective}
+          {this.props.objective}
+          {this.props.deductive}
+          {this.props.inductive}
+        </p>
+        <p className="mt0">
           Behold, your darkest desires <span className="small">(probably)</span>
           :
         </p>
@@ -34,7 +40,11 @@ function msp(state) {
   return {
     location: state.location,
     url: state.url,
-    restaurants: state.restaurants
+    restaurants: state.restaurants,
+    subjective: state.subjective,
+    objective: state.objective,
+    deductive: state.deductive,
+    inductive: state.inductive
   };
 }
 

@@ -73,7 +73,7 @@ class Spiciness extends Component {
                 value="1"
                 onChange={() => this.handleCheck('baby')}
               />
-              <label for="radio1" className="f jcc aic y x">
+              <label htmlFor="radio1" className="f jcc aic y x">
                 {this.state.baby}
               </label>
             </li>
@@ -86,7 +86,7 @@ class Spiciness extends Component {
                 value="2"
                 onChange={() => this.handleCheck('ginger')}
               />
-              <label for="radio2" className="f jcc aic y x">
+              <label htmlFor="radio2" className="f jcc aic y x">
                 {this.state.ginger}
               </label>
             </li>
@@ -99,7 +99,7 @@ class Spiciness extends Component {
                 value="3"
                 onChange={() => this.handleCheck('posh')}
               />
-              <label for="radio3" className="f jcc aic y x">
+              <label htmlFor="radio3" className="f jcc aic y x">
                 {this.state.posh}
               </label>
             </li>
@@ -112,7 +112,7 @@ class Spiciness extends Component {
                 value="4"
                 onChange={() => this.handleCheck('sporty')}
               />
-              <label for="radio4" className="f jcc aic y x">
+              <label htmlFor="radio4" className="f jcc aic y x">
                 {this.state.sporty}
               </label>
             </li>
@@ -125,7 +125,7 @@ class Spiciness extends Component {
                 value="5"
                 onChange={() => this.handleCheck('scary')}
               />
-              <label for="radio5" className="f jcc aic y x">
+              <label htmlFor="radio5" className="f jcc aic y x">
                 {this.state.scary}
               </label>
             </li>

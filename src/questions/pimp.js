@@ -76,8 +76,9 @@ class Pimp extends Component {
       <div className="gutter f fw aic jcc fill abs">
         <div className="fa x m1 card">
           <div className="x">{this.props.question}</div>
-          <p className="s4">Pimp this ride.</p>
-          <div className="x h-25 mb1">
+          <p className="s4 mb0">Pimp this ride.</p>
+          <p className="small">Be sure to view your options in the dropdown</p>
+          <div className="x h-25 my1">
             <Draggable onDrag={this.handleDrag}>
               <div className="sq rel wheel z10 inline-block mr025" id="1" />
             </Draggable>
