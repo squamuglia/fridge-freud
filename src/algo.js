@@ -1,50 +1,87 @@
 export const personalities = [
   { name: 'Fanny Pack', img: '/teeth.svg', params: 'asian' },
-  { name: 'Rolling Backpack Kid', img: '/teeth.svg', params: 'asian, noodles' },
-  { name: 'Commandante', img: '/teeth.svg', params: 'asian' },
+  {
+    name: 'Rolling Backpack Kid',
+    img: '/teeth.svg',
+    params:
+      'japacurry,ramen,izakaya,blowfish,okinawan,soba,udon,tonkatsu,riceshop,conveyorsushi,waffles'
+  },
+  {
+    name: 'Commandante',
+    img: '/teeth.svg',
+    params: 'cuban,russian,cambodian,bistros'
+  },
   {
     name: 'Morrissey',
     img: '/teeth.svg',
-    params: 'popuprestaurants, vietnamese, ukranian, mexican'
+    params:
+      'popuprestaurants,vietnamese,ukranian,mexican,poutineries,malaysian,indonesian,dumplings,szechuan'
   },
   {
     name: 'Minnesotan',
     img: '/minnesota.svg',
     params:
-      'rotisserie_chicken, sandwiches, tex-mex, steak, poutineries, potatoes'
+      'rotisserie_chicken,sandwiches,tex-mex,steak,poutineries,potatoes,gastropubs,german'
   },
   {
     name: 'Super Kawaii',
     img: '/bunny.svg',
-    params: 'bubbletea, icecream, shavedice, shavedsnow, candy'
+    params:
+      'bubbletea,icecream,shavedice,shavedsnow,candy,conveyorsushi,waffles,milkbars,dumplings'
   },
   {
     name: 'Golden Retriever',
     img: '/teeth.svg',
     params:
-      'rotisserie_chicken, sandwiches, tex-mex, steak, poutineries, potato, polish, diner'
+      'rotisserie_chicken,sandwiches,tex-mex,steak,poutineries,potato,polish,diners,foodstands'
   },
   {
     name: 'Chad Muska',
     img: '/skate.svg',
-    params: 'cannabis_clinics, breakfast_brunch, burgers, beergarden'
+    params:
+      'cannabis_clinics,breakfast_brunch,burgers,beergarden,meatballs,tacos,nightfood,skateshops,skate_parks,coffeeshops'
   },
-  { name: 'Anal Retentive', img: '/paper.svg', params: 'asian' },
-  { name: 'Jewish Mom', img: '/teeth.svg', params: 'jewish' },
-  { name: 'Virgo', img: '/teeth.svg', params: 'acaibowls, tapas' },
-  { name: 'Dale Carnegie', img: '/teeth.svg', params: 'asian, tapas' },
+  { name: 'Anal Retentive', img: '/paper.svg', params: 'salad' },
+  {
+    name: 'Jewish Mom',
+    img: '/teeth.svg',
+    params:
+      'jewish,kosher,mediterranean,greek,norwegian,potato,polish,diners,ukrainian,schnitzel,salad,dimsum,cantonese'
+  },
+  {
+    name: 'Virgo',
+    img: '/teeth.svg',
+    params:
+      'acaibowls,tapas,dancerestaurants,chilean,cuban,vegan,salad,ethiopian,bistros,dinnertheater,diners,cafes'
+  },
+  {
+    name: 'Dale Carnegie',
+    img: '/teeth.svg',
+    params: 'salad,tapas,swedish,mediterranean,thai'
+  },
   {
     name: 'Artiste',
     img: '/teeth.svg',
-    params: 'placentaencapsulation, srilankan, vegan'
+    params:
+      'placentaencapsulation,srilankan,vegan,raw_food,popuprestaurants,indian,tapas,nightfood,conveyorsushi,nudist'
   },
-  { name: 'Balloon Boy', img: '/teeth.svg', params: 'asian' },
+  {
+    name: 'Balloon Boy',
+    img: '/teeth.svg',
+    params:
+      'hawaiian,bubbletea,icecream,shavedice,shavedsnow,candy,waffles,milkbars'
+  },
   {
     name: 'Cryptoboi',
     img: '/bitcoin.svg',
-    params: 'cannabis_clinics, breakfast_brunch'
+    params: 'cannabis_clinics,breakfast_brunch,cantonese,buffets,coffeeshops'
   },
-  { name: 'Drunk', img: '/teeth.svg', params: 'asian' },
+  {
+    name: 'Drunk',
+    img: '/teeth.svg',
+    params:
+      'delicatessen,bbq,foodstands,diners,burgers,hotdogs,cafeteria,convenience,conveyorsushi,beergarden,beerhall,belgian,coffeeshops'
+  },
   { name: "You're a nobody!", img: '/teeth.svg', params: 'mexican' }
 ];
 

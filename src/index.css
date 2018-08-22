@@ -296,3 +296,16 @@ input:checked + label {
 .flickity-enabled:focus {
   outline: none;
 }
+
+.flickity-prev-next-button.next {
+  float: right;
+}
+
+.flickity-button-icon {
+  width: 20px;
+  padding-top: 0.25rem;
+}
+
+.flickity-page-dots {
+  display: none;
+}
