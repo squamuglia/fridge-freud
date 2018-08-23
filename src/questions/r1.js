@@ -37,25 +37,25 @@ class R1 extends Component {
           <p>I think it's {this.state.guess}</p>
           <div className="f fw mb2">
             <button
-              className="inline-block mr05 fa ac mb1"
+              className="inline-block mr05 f-50 ac mb1"
               onClick={e => this.check(e, 'a bat.')}
             >
               Bat
             </button>
             <button
-              className="inline-block mr05 fa ac mb1"
+              className="inline-block mr05 f-50 ac mb1"
               onClick={e => this.check(e, 'ovaries.')}
             >
               Ovaries
             </button>
             <button
-              className="inline-block mr05 fa ac mb1"
-              onClick={e => this.check(e, 'Mario')}
+              className="inline-block mr05 f-50 ac mb1"
+              onClick={e => this.check(e, 'Mario.')}
             >
               Mario
             </button>
             <button
-              className="inline-block mr05 fa ac mb1"
+              className="inline-block mr05 f-50 ac mb1"
               onClick={e => this.check(e, 'Woody Woodpecker.')}
             >
               Woody Woodpecker

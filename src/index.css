@@ -56,6 +56,10 @@ li:hover { color: #888; transition: .2s; cursor: pointer; }
 
 .w-33 { width: 30%; margin-right: 1%; }
 
+.mh-20 { min-height: 20rem }
+
+.f-50 { flex: 1 0 auto; flex-basis: 40% }
+
 .red-sq { background: #e81a1a; width: 50px; height: 50px; }
 
 .sq { width: 50px; height: 50px; }
@@ -69,6 +73,10 @@ li:hover { color: #888; transition: .2s; cursor: pointer; }
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.__title { height: 3rem }
+
+.scroll { overflow: scroll }
 
 /* Breakpoints */
 @media (max-width: 20em){
@@ -92,7 +100,7 @@ li:hover { color: #888; transition: .2s; cursor: pointer; }
 
 /* Form */
 input:checked + label {
-  background: #bbffe0
+  background: #77e3ff
 }
 
 .card {
@@ -317,6 +325,3 @@ input:checked + label {
   display: none;
 }
 
-.__title { height: 3rem }
-
-.mh-20 { min-height: 20rem }

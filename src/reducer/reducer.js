@@ -85,6 +85,7 @@ export default function reducer(state = defaultState, action) {
             image_url: '/chef.jpg',
             name: 'Loading...',
             categories: [{ title: 'nothing' }],
+            location: { address1: 'nowhere' },
             rating: 0
           },
           {
@@ -92,6 +93,7 @@ export default function reducer(state = defaultState, action) {
             image_url: '/chef.jpg',
             name: 'Loading...',
             categories: [{ title: 'nothing' }],
+            location: { address1: 'nowhere' },
             rating: 0
           },
           {
@@ -99,6 +101,7 @@ export default function reducer(state = defaultState, action) {
             image_url: '/chef.jpg',
             name: 'Loading...',
             categories: [{ title: 'nothing' }],
+            location: { address1: 'nowhere' },
             rating: 0
           }
         ]
