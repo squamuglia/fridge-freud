@@ -4,7 +4,7 @@ const About = props => {
   if (props.show) {
     return (
       <div className="yview xview f aic jcc abs z10 fade">
-        <div className="mw-1 fa mxa z8 bg-white p1 h-25 scroll">
+        <div className="mw-1 fa mxa z8 bg-white p1 scroll">
           <p className="s4">About</p>
           <p>
             Don't look outwardly for that fire new lunch spot, look inwardly.

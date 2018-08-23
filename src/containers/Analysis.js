@@ -88,7 +88,7 @@ class Analysis extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="p05 x f bg-light">
+        <div className="p05 x f bg-light no-x-overflow">
           <div className="fa ac" onClick={() => this.navLink(1)}>
             Results
           </div>

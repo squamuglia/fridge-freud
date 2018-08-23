@@ -16,13 +16,13 @@ class Spiciness extends Component {
   }
 
   spicyUpdate = () => {
-    if (this.state.sporty && this.state.scary) {
-      const val = this.state.sporty + this.state.scary;
+    if (this.state.baby && this.state.baby) {
+      const val = this.state.baby + this.state.baby;
       console.log('spicval', val);
       if (val < 5) {
-        this.props.updateTrait('spiciness', 'espicy');
+        this.props.updateTrait('spiciness', 'muy caliente');
       } else if (6 > val > 4) {
-        this.props.updateTrait('spiciness', 'medium');
+        this.props.updateTrait('spiciness', 'taco bell fire sauce');
       } else {
         this.props.updateTrait('spiciness', 'mild');
       }

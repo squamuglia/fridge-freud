@@ -78,26 +78,6 @@ li:hover { color: #888; transition: .2s; cursor: pointer; }
 
 .scroll { overflow: scroll }
 
-/* Breakpoints */
-@media (max-width: 20em){
-  .xs-hide{ display:none !important }
-
-  .mobile-button { position: fixed;  }
-}
-
-@media (min-width: 40em) and (max-width: 52em){
-  .sm-hide{ display:none !important }
-  .mobile-button { position: fixed;  }
-}
-
-@media (min-width: 52em) and (max-width: 64em){
-  .md-hide{ display:none !important }
-}
-
-@media (min-width: 64em){
-  .lg-hide{ display:none !important }
-}
-
 /* Form */
 input:checked + label {
   background: #77e3ff
@@ -325,3 +305,22 @@ input:checked + label {
   display: none;
 }
 
+/* Breakpoints */
+@media (max-width: 20em){
+  .xs-hide{ display:none !important }
+  .flickity-prev-next-button { display:none !important }
+  .mobile-button { position: fixed;  }
+}
+
+@media (min-width: 40em) and (max-width: 52em){
+  .sm-hide{ display:none !important }
+  .mobile-button { position: fixed;  }
+}
+
+@media (min-width: 52em) and (max-width: 64em){
+  .md-hide{ display:none !important }
+}
+
+@media (min-width: 64em){
+  .lg-hide{ display:none !important }
+}

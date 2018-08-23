@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getPersonality } from '../algo';
+import { explanation } from '../helpers/explanation';
 
 const Profile = props => {
   return (
@@ -21,20 +22,21 @@ const Profile = props => {
         {props.inductive}
       </p>
       <p>Spiciness: {props.spiciness}</p>
-      <ul>
+      <p>{explanation(props)}</p>
+      {/* <ul>
         <li>
-          <span id="e">Extraversion</span>/<span id="i">Introversion</span>
+          <span ref="e">Extraversion</span>/<span ref="i">Introversion</span>
         </li>
         <li>
-          <span id="s">Sensing</span>/<span id="n">Intuition</span>
+          <span ref="s">Sensing</span>/<span ref="n">Intuition</span>
         </li>
         <li>
-          <span id="t">Thinking</span>/<span id="f">Feeling</span>
+          <span ref="t">Thinking</span>/<span ref="f">Feeling</span>
         </li>
         <li>
-          <span id="j">Judging</span>/<span id="p">Perceiving</span>
+          <span ref="j">Judging</span>/<span ref="p">Perceiving</span>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };
