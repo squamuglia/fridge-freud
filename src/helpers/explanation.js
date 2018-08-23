@@ -9,7 +9,7 @@ export const explanation = props => {
       'Extraverted types learn from talking and interacting with others. They like restaurant experiences that are fun and loud. ';
   } else {
     first =
-      'Intoverted types regain energy through quiet reflection and privacy. They like intimiate settings and candles. ';
+      'Intoverted types regain energy through quiet reflection and privacy. They like intimate settings and candles. ';
   }
   if (props.deductive === 's') {
     second =

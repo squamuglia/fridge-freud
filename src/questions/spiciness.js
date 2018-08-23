@@ -32,7 +32,6 @@ class Spiciness extends Component {
   handleCheck = girl => {
     if (!this.state[girl]) {
       //if girl is null
-      console.log('spiceClick', this.state.ctrArr);
       const girlVal = this.state.ctrArr[0];
       const newArr = this.state.ctrArr;
       newArr.shift();

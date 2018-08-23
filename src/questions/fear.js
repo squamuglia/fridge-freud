@@ -30,8 +30,8 @@ class Fear extends Component {
         <div className="fa x m1 card">
           <div className="x">{this.props.question}</div>
           <p className="s4">
-            Assuming for the sake of argument you're a 13 year old heterosexual
-            boy, are you threatened by speaking to the cutest girl in class?
+            Assuming for the sake of argument you're 13 years old, are you
+            threatened by speaking to the cutest person in class?
           </p>
           {this.state.guess}
           <div className="f fw my1">

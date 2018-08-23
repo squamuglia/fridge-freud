@@ -19,11 +19,11 @@ class R1 extends Component {
     if (guess === 'bat') {
       this.props.updateTrait('inductive', 'j');
     } else if (guess === 'mario') {
-      this.props.updateTrait('deductive', 's');
+      this.props.updateTrait('objective', 's');
     } else if (guess === 'ovaries') {
       this.props.updateTrait('deductive', 'f');
     } else {
-      this.props.updateTrait('inductive', 'p');
+      this.props.updateTrait('deductive', 'f');
     }
   };
 

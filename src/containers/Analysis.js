@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Profile from '../components/profile';
 import Results from '../components/results';
 import Favorites from '../components/favorites';
-import { getPersonality } from '../algo';
+import { getPersonality } from '../helpers/algo';
 import { connect } from 'react-redux';
 
 class Analysis extends Component {

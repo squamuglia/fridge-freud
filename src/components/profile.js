@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPersonality } from '../algo';
+import { getPersonality } from '../helpers/algo';
 import { explanation } from '../helpers/explanation';
 
 const Profile = props => {

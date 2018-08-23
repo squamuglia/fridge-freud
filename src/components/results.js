@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Restaurant from './restaurant';
 import { connect } from 'react-redux';
-import { getPersonality } from '../algo';
+import { getPersonality } from '../helpers/algo';
 import Flickity from 'react-flickity-component';
 
 class Results extends Component {
