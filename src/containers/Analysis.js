@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import Profile from "../components/profile";
-import Results from "../components/results";
-import Favorites from "../components/favorites";
-import { getPersonality } from "../helpers/algo";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import Profile from '../components/profile';
+import Results from '../components/results';
+import Favorites from '../components/favorites';
+import { getPersonality } from '../helpers/algo';
+import { connect } from 'react-redux';
 
 class Analysis extends Component {
 	constructor(props) {
@@ -22,7 +22,7 @@ class Analysis extends Component {
 
 	componentDidMount() {
 		const categories = getPersonality(this.props).params,
-			location = this.props.location ? this.props.location : "10001",
+			location = this.props.location ? this.props.location : '10001',
 			url = `https://freud-api-fqgxchksau.now.sh/${location}/${categories}`;
 
 		fetch(url)
@@ -44,13 +44,11 @@ class Analysis extends Component {
 			}
 			case 2: {
 				return (
-					<React.Fragment>
-						<div className="gutter f fw jcc">
-							<div className="fa x m1 card">
-								<Profile />
-							</div>
+					<div className="gutter f fw jcc">
+						<div className="fa x m1 card">
+							<Profile />
 						</div>
-					</React.Fragment>
+					</div>
 				);
 			}
 
@@ -65,7 +63,7 @@ class Analysis extends Component {
 
 	reset = () => {
 		this.props.resetState();
-		this.props.history.push("/");
+		this.props.history.push('/');
 	};
 
 	render() {
@@ -107,20 +105,15 @@ function msp(state) {
 function mdp(dispatch) {
 	return {
 		updateTrait: (trait, score) => {
-			dispatch({ type: "UPDATE_TRAIT", trait: trait, payload: score });
+			dispatch({ type: 'UPDATE_TRAIT', trait: trait, payload: score });
 		},
 		addRests: restaurants => {
-			dispatch({ type: "ADD_RESTAURANTS", payload: restaurants });
+			dispatch({ type: 'ADD_RESTAURANTS', payload: restaurants });
 		},
 		resetState: () => {
-			dispatch({ type: "RESET" });
+			dispatch({ type: 'RESET' });
 		}
 	};
 }
 
-export default withRouter(
-	connect(
-		msp,
-		mdp
-	)(Analysis)
-);
+export default withRouter(connect(msp, mdp)(Analysis));
