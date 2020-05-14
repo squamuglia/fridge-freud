@@ -1,6 +1,8 @@
 ## Fridge Freud
 
-Fridge Freud is a React app that creates a Myers-Briggs profile to recommend restaurants in your area.
+Fridge Freud one of the first apps I ever built, so I keep it here for entertainment.
+
+It creates a Myers-Briggs profile to recommend restaurants in your area.
 
 The custom form-flow has a number of novel interactions such as a drag-and-drop car customizer (a la pimp my ride), and a spiciness ranker that let's users rank images of the spice girls to determine what level of spice they can handle.
 
